@@ -139,7 +139,7 @@ const PROJECTS = [
     domain: "zeba.pk",
     name: "Zeba.pk",
     desc: "Women's fashion & undergarments e-commerce, Pakistan — abayas, nightwear, shapewear, skincare.",
-    img: "/images/zeba.svg",
+    img: "https://www.zeba.pk/assets/images/zeba-pk.svg",
     imgFit: "contain",
     icon: ShoppingBag,
     tags: ["E-commerce", "SEO"],
@@ -149,7 +149,7 @@ const PROJECTS = [
     domain: "kdicislamabad.com",
     name: "KDIC Islamabad",
     desc: "UK-standard dental clinic in Islamabad — implants, root canals, orthodontics.",
-    img: "/images/kdic.svg",
+    img: "https://www.kdicislamabad.com/assets/img/kensington-dental-clinic.png",
     imgFit: "cover",
     icon: Stethoscope,
     tags: ["Healthcare", "Local SEO"],
@@ -159,7 +159,7 @@ const PROJECTS = [
     domain: "hiddenhills.pk",
     name: "Hidden Hills",
     desc: "Luxury hotel & resort in Mansehra, KPK — accommodations, dining, events, online booking.",
-    img: "/images/hidden_hills.svg",
+    img: "https://www.hiddenhills.pk/assets/img/logo/hiddenhills-hotel-&-resorts-logo.webp",
     imgFit: "cover",
     icon: Mountain,
     tags: ["Hospitality", "Booking Site"],
@@ -169,7 +169,7 @@ const PROJECTS = [
     domain: "ninja-vapes.co.uk",
     name: "Ninja Vapes UK",
     desc: "UK online vape store — e-liquids, nic salts, pod kits, coils, same-day dispatch.",
-    img: "/images/ninja_vapes.svg",
+    img: "https://www.ninja-vapes.co.uk/assets/img/ninja-vapes-logo.webp",
     imgFit: "cover",
     icon: Store,
     tags: ["E-commerce", "UK Market"],
@@ -179,7 +179,7 @@ const PROJECTS = [
     domain: "vapeplay.pk",
     name: "VapePlay.pk",
     desc: "Online vape store serving Pakistan — vape kits, e-liquids, accessories.",
-    img: "/images/vapeplay.svg",
+    img: "https://www.vapeplay.pk/assets/img/logo/vapeplaypk.webp",
     imgFit: "contain",
     icon: Store,
     tags: ["E-commerce", "Pakistan"],
@@ -187,7 +187,7 @@ const PROJECTS = [
 ];
 
 const WHATSAPP_IMG = "/images/whatsapp.svg";
-const PROFILE_IMG = "/images/profile.jpg";
+const PROFILE_IMG = "https://z-cdn-media.chatglm.cn/files/20f88d85-236a-491b-9288-11ede87d363f.png?auth_key=1882906137-c210396973e54324af80563658ce48c0-0-f125cb28b7727a158eaf54bbff4f435b";
 
 /* ============================================================
    GLOBAL STYLES (Inline CSS Injection)
@@ -1173,7 +1173,7 @@ export default function App() {
 
                 <div className="relative w-72 h-80 sm:w-80 sm:h-[360px] lg:w-[380px] lg:h-[420px] rounded-2xl overflow-hidden profile-shadow bg-white border border-border-light">
                   <img
-                    src={PROFILE_IMG}
+                    src="https://z-cdn-media.chatglm.cn/files/20f88d85-236a-491b-9288-11ede87d363f.png?auth_key=1882906137-c210396973e54324af80563658ce48c0-0-f125cb28b7727a158eaf54bbff4f435b"
                     alt="Muhammad Aashir - Professional Profile Photo"
                     className="w-full h-full object-cover object-top"
                     loading="eager"
@@ -1230,7 +1230,7 @@ export default function App() {
                 className="relative aspect-[4/5] rounded-2xl overflow-hidden card-shadow bg-bg-secondary"
                 style={{ transition: "transform .3s ease-out" }}
               >
-                <img src={PROFILE_IMG} alt="Muhammad Aashir" className="w-full h-full object-cover object-top" referrerPolicy="no-referrer" />
+                <img src="https://z-cdn-media.chatglm.cn/files/20f88d85-236a-491b-9288-11ede87d363f.png?auth_key=1882906137-c210396973e54324af80563658ce48c0-0-f125cb28b7727a158eaf54bbff4f435b" alt="Muhammad Aashir" className="w-full h-full object-cover object-top" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6">
                   <div className="bg-accent text-white text-xs font-bold tracking-wide uppercase px-5 py-2.5 rounded-lg shadow-md">
@@ -1549,7 +1549,7 @@ export default function App() {
             <div className="card-shadow-hover bg-white border border-border-light rounded-2xl p-7 text-left card-shadow">
               <div className="flex items-center gap-4 mb-5">
                 <div className="w-14 h-14 rounded-xl overflow-hidden border border-border-light">
-                  <img src={PROFILE_IMG} alt="Muhammad Aashir" className="w-full h-full object-cover object-top" referrerPolicy="no-referrer" />
+                  <img src="https://z-cdn-media.chatglm.cn/files/20f88d85-236a-491b-9288-11ede87d363f.png?auth_key=1882906137-c210396973e54324af80563658ce48c0-0-f125cb28b7727a158eaf54bbff4f435b" alt="Muhammad Aashir" className="w-full h-full object-cover object-top" referrerPolicy="no-referrer" />
                 </div>
                 <div>
                   <div className="font-semibold text-text-primary text-sm">Muhammad Aashir</div>
