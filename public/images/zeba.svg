@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <rect width="800" height="500" fill="#fdf2f8"/>
+  <!-- Decorative top bar -->
+  <rect width="800" height="60" fill="#f472b6"/>
+  <text x="40" y="38" font-family="'Inter', sans-serif" font-weight="bold" font-size="24" fill="#ffffff">ZEBA.PK</text>
+  <!-- Nav items -->
+  <text x="600" y="36" font-family="'Inter', sans-serif" font-size="14" fill="#ffffff" opacity="0.9">Shop • Categories • Contact</text>
+  <!-- Hero Section -->
+  <rect x="40" y="100" width="720" height="240" rx="12" fill="#fbcfe8"/>
+  <text x="80" y="180" font-family="'Inter', sans-serif" font-weight="bold" font-size="36" fill="#831843">Premium Women's Fashion</text>
+  <text x="80" y="220" font-family="'Inter', sans-serif" font-size="16" fill="#9d174d">Discover the finest collection of abayas, nightwear &amp; shapewear</text>
+  <!-- Button -->
+  <rect x="80" y="250" width="140" height="40" rx="20" fill="#db2777"/>
+  <text x="115" y="274" font-family="'Inter', sans-serif" font-weight="bold" font-size="14" fill="#ffffff">Shop Now</text>
+  <!-- Product Grid Preview -->
+  <rect x="40" y="360" width="220" height="100" rx="8" fill="#ffffff" stroke="#f472b6" stroke-width="2"/>
+  <text x="60" y="415" font-family="'Inter', sans-serif" font-weight="semibold" font-size="16" fill="#831843">Elegant Abayas</text>
+  <rect x="290" y="360" width="220" height="100" rx="8" fill="#ffffff" stroke="#f472b6" stroke-width="2"/>
+  <text x="310" y="415" font-family="'Inter', sans-serif" font-weight="semibold" font-size="16" fill="#831843">Cozy Nightwear</text>
+  <rect x="540" y="360" width="220" height="100" rx="8" fill="#ffffff" stroke="#f472b6" stroke-width="2"/>
+  <text x="560" y="415" font-family="'Inter', sans-serif" font-weight="semibold" font-size="16" fill="#831843">Premium Skincare</text>
+</svg>
