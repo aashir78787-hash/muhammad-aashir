@@ -957,7 +957,7 @@ export default function App() {
 const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
-  // 1. Validation (Aapka purana check)
+  // 1. Validation
   if (!formData.name || !formData.email || !formData.message) {
     showToast("Please fill in all required fields.");
     return;
@@ -976,7 +976,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
     if (response.ok) {
       showToast("Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" }); // Form clear
+      setFormData({ name: "", email: "", message: "" });
     } else {
       showToast("Something went wrong. Please try again.");
     }
