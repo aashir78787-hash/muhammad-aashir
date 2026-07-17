@@ -954,12 +954,38 @@ export default function App() {
     setTimeout(() => setToast({ show: false, message: "" }), 4000);
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
-      showToast("Please fill in all required fields.");
-      return;
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  // 1. Validation (Aapka purana check)
+  if (!formData.name || !formData.email || !formData.message) {
+    showToast("Please fill in all required fields.");
+    return;
+  }
+
+  // 2. Formspree Integration
+  setIsSubmitting(true);
+  try {
+    const response = await fetch("https://formspree.io/f/xaqrebdj", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      showToast("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" }); // Form clear
+    } else {
+      showToast("Something went wrong. Please try again.");
     }
+  } catch (error) {
+    showToast("Error: Could not send message.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
     setIsSubmitting(true);
     try {
       const endpoint = (import.meta as any).env.VITE_CONTACT_FORM_ENDPOINT;
