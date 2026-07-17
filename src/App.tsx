@@ -986,34 +986,14 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     setIsSubmitting(false);
   }
 };
-    setIsSubmitting(true);
-    try {
-      const endpoint = (import.meta as any).env.VITE_CONTACT_FORM_ENDPOINT;
-      if (!endpoint || endpoint.includes("YOUR_FORM_ID")) {
-        throw new Error("Form endpoint not configured");
-      }
-      const res = await fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(formData),
-      });
-      if (!res.ok) throw new Error("Request failed");
-      showToast("Message sent successfully! I'll get back to you soon.");
-      setFormData({ name: "", email: "", message: "" });
-    } catch (err) {
-      showToast("Couldn't send right now — please email me directly instead.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
-  const scrollToHash = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
+const scrollToHash = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  e.preventDefault();
+  const target = document.querySelector(href);
+  if (target) {
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
 
   /* ---- about image 3D tilt ---- */
   const aboutImgRef = useRef<HTMLDivElement>(null);
