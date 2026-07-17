@@ -957,11 +957,13 @@ export default function App() {
 const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
+  // 1. Validation
   if (!formData.name || !formData.email || !formData.message) {
     showToast("Please fill in all required fields.");
     return;
   }
 
+  // 2. Formspree Integration
   setIsSubmitting(true);
   try {
     const response = await fetch("https://formspree.io/f/xaqrebdj", {
