@@ -1630,7 +1630,7 @@ export default function App() {
                   </div>
                   <div>
                     <div className="text-sm font-semibold text-text-primary group-hover:text-accent transition-colors">Location</div>
-                    <div className="text-xs text-text-tertiary">house 460, street 105, i8/4, islamabad</div>
+                    <div className="text-xs text-text-tertiary">Islamabad, Pakistan</div>
                   </div>
                 </div>
               </div>
