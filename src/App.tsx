@@ -1099,7 +1099,7 @@ export default function App() {
               </div>
 
               <h1 className="font-geist font-semibold clamp-hero tracking-tight leading-[1.1] mb-6" style={{ perspective: "800px" }}>
-                <div><WordReveal text="Hi, I'm" delay={0.15} /></div>
+                <div><WordReveal text="Hi, I'm" delay={0.80} /></div>
                 <div><WordReveal text="Muhammad" delay={0.35} className="text-accent text-glow-anim" /></div>
                 <div><WordReveal text="Aashir" delay={0.55} /></div>
               </h1>
@@ -1234,7 +1234,7 @@ export default function App() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6">
                   <div className="bg-accent text-white text-xs font-bold tracking-wide uppercase px-5 py-2.5 rounded-lg shadow-md">
-                    Since 2024
+                    SEO Expert
                   </div>
                 </div>
               </div>
