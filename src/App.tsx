@@ -957,37 +957,11 @@ export default function App() {
 const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
-  // 1. Validation
   if (!formData.name || !formData.email || !formData.message) {
     showToast("Please fill in all required fields.");
     return;
   }
 
-  // 2. Formspree Integration
-  setIsSubmitting(true);
-  try {
-    const response = await fetch("https://formspree.io/f/xaqrebdj", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-
-    if (response.ok) {
-      showToast("Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" });
-    } else {
-      showToast("Something went wrong. Please try again.");
-    }
-  } catch (error) {
-    showToast("Error: Could not send message.");
-  } finally {
-    setIsSubmitting(false);
-  }
-};
-
-  // 2. Formspree Integration
   setIsSubmitting(true);
   try {
     const response = await fetch("https://formspree.io/f/xaqrebdj", {
