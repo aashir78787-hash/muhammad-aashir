@@ -133,58 +133,55 @@ const SKILLS = [
   },
 ];
 
-const PROJECTS = [
-  {
-    url: "https://www.zeba.pk/",
-    domain: "zeba.pk",
-    name: "Zeba.pk",
-    desc: "Women's fashion & undergarments e-commerce, Pakistan — abayas, nightwear, shapewear, skincare.",
-    img: "https://www.zeba.pk/assets/images/zeba-pk.svg",
-    imgFit: "contain",
-    icon: ShoppingBag,
-    tags: ["E-commerce", "SEO"],
-  },
-  {
-    url: "https://www.kdicislamabad.com/",
-    domain: "kdicislamabad.com",
-    name: "KDIC Islamabad",
-    desc: "UK-standard dental clinic in Islamabad — implants, root canals, orthodontics.",
-    img: "https://www.kdicislamabad.com/assets/img/kensington-dental-clinic.png",
-    imgFit: "cover",
-    icon: Stethoscope,
-    tags: ["Healthcare", "Local SEO"],
-  },
-  {
-    url: "https://www.hiddenhills.pk/",
-    domain: "hiddenhills.pk",
-    name: "Hidden Hills",
-    desc: "Luxury hotel & resort in Mansehra, KPK — accommodations, dining, events, online booking.",
-    img: "https://www.hiddenhills.pk/assets/img/logo/hiddenhills-hotel-&-resorts-logo.webp",
-    imgFit: "cover",
-    icon: Mountain,
-    tags: ["Hospitality", "Booking Site"],
-  },
-  {
-    url: "https://www.ninja-vapes.co.uk/",
-    domain: "ninja-vapes.co.uk",
-    name: "Ninja Vapes UK",
-    desc: "UK online vape store — e-liquids, nic salts, pod kits, coils, same-day dispatch.",
-    img: "https://www.ninja-vapes.co.uk/assets/img/ninja-vapes-logo.webp",
-    imgFit: "cover",
-    icon: Store,
-    tags: ["E-commerce", "UK Market"],
-  },
-  {
-    url: "https://www.vapeplay.pk/",
-    domain: "vapeplay.pk",
-    name: "VapePlay.pk",
-    desc: "Online vape store serving Pakistan — vape kits, e-liquids, accessories.",
-    img: "https://www.vapeplay.pk/assets/img/logo/vapeplaypk.webp",
-    imgFit: "contain",
-    icon: Store,
-    tags: ["E-commerce", "Pakistan"],
-  },
-];
+function ProjectCard({ project }: { project: (typeof PROJECTS)[number] }) {
+  const Icon = project.icon;
+
+  return (
+    
+      href={project.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex flex-col rounded-2xl border border-neutral-200 bg-white overflow-hidden hover:shadow-lg transition-shadow"
+    >
+      {/* Logo container — fixed aspect ratio, image never cropped */}
+      <div className="relative w-full aspect-[16/9] bg-neutral-50 flex items-center justify-center overflow-hidden">
+        <img
+          src={project.img}
+          alt={`${project.name} logo`}
+          className={
+            project.imgFit === "contain"
+              ? "w-full h-full object-contain p-6"
+              : "w-full h-full object-cover"
+          }
+          loading="lazy"
+        />
+      </div>
+
+      <div className="flex flex-col gap-2 p-5">
+        <div className="flex items-center gap-2 text-neutral-500 text-sm">
+          <Icon className="w-4 h-4" />
+          <span>{project.domain}</span>
+        </div>
+        <h3 className="text-lg font-semibold text-neutral-900">
+          {project.name}
+        </h3>
+        <p className="text-sm text-neutral-600 leading-relaxed">
+          {project.desc}
+        </p>
+        <div className="flex flex-wrap gap-2 mt-2">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="text-xs px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-700"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </a>
+  );
+}
 
 const WHATSAPP_IMG = "/images/whatsapp.svg";
 const PROFILE_IMG = "https://z-cdn-media.chatglm.cn/files/20f88d85-236a-491b-9288-11ede87d363f.png?auth_key=1882906137-c210396973e54324af80563658ce48c0-0-f125cb28b7727a158eaf54bbff4f435b";
