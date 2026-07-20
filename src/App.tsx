@@ -133,6 +133,40 @@ const SKILLS = [
   },
 ];
 
+const PROJECTS = [
+  {
+    name: "Web Comforts",
+    domain: "webcomforts.com",
+    url: "https://www.webcomforts.com",
+    img: "https://www.webcomforts.com/mtill-uploads/files/web-comforts-logo-128.svg",
+    imgFit: "contain",
+    icon: Store,
+    desc: "A professional business website with clean design and optimized on-page structure.",
+    tags: ["Web Design", "SEO", "Branding"],
+  },
+  {
+    name: "Vape Suite",
+    domain: "vapesuite.co.uk",
+    url: "https://www.vapesuite.co.uk",
+    img: "https://www.vapesuite.co.uk/assets/img/logo/vape-suite.svg",
+    imgFit: "contain",
+    icon: ShoppingBag,
+    desc: "An e-commerce storefront built for conversions, with SEO-driven product pages.",
+    tags: ["E-commerce", "SEO", "UX"],
+  },
+  // 🔽 Replace these with your real existing projects 🔽
+  {
+    name: "Project Name",
+    domain: "example.com",
+    url: "https://example.com",
+    img: "https://example.com/logo.svg",
+    imgFit: "contain",
+    icon: Stethoscope,
+    desc: "Short description of this project.",
+    tags: ["Tag1", "Tag2"],
+  },
+];
+
 function ProjectCard({ project }: { project: (typeof PROJECTS)[number] }) {
   const Icon = project.icon;
 
@@ -144,16 +178,13 @@ function ProjectCard({ project }: { project: (typeof PROJECTS)[number] }) {
       className="group flex flex-col rounded-2xl border border-neutral-200 bg-white overflow-hidden hover:shadow-lg transition-shadow"
     >
       {/* Logo container — fixed aspect ratio, image never cropped */}
-      <div className="relative w-full aspect-[16/9] bg-neutral-50 flex items-center justify-center overflow-hidden">
+      <div className="relative w-full aspect-[16/9] bg-neutral-50 flex items-center justify-center overflow-hidden p-6">
         <img
           src={project.img}
           alt={`${project.name} logo`}
-          className={
-            project.imgFit === "contain"
-              ? "w-full h-full object-contain p-6"
-              : "w-full h-full object-cover"
-          }
+          className="max-w-full max-h-full w-auto h-auto object-contain"
           loading="lazy"
+          referrerPolicy="no-referrer"
         />
       </div>
 
@@ -1039,8 +1070,8 @@ export default function App() {
                   href={link.href}
                   onClick={(e) => scrollToHash(e, link.href)}
                   className={`nav-link text-sm font-medium transition-colors ${activeSection === link.href.slice(1)
-                      ? "text-accent font-semibold active"
-                      : "text-text-secondary hover:text-accent"
+                    ? "text-accent font-semibold active"
+                    : "text-text-secondary hover:text-accent"
                     }`}
                 >
                   {link.label}
