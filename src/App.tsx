@@ -178,11 +178,11 @@ const PROJECTS = [
     url: "https://www.vapesuite.co.uk",
     domain: "vapesuite.co.uk",
     name: "Vapesuite",
-    desc: "Customized storefront for vape retail brand.",
+    desc: "Boosted organic website traffic and engagement through strategic SEO.",
     img: "https://www.vapesuite.co.uk/assets/img/logo/vape-suite.svg",
     imgFit: "contain",
     icon: Store,
-    tags: ["E-commerce", "Pakistan"],
+    tags: ["E-commerce", "United Kindom"],
   },
 ];
 
