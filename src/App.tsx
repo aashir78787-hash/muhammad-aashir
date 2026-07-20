@@ -175,11 +175,11 @@ const PROJECTS = [
     tags: ["E-commerce", "UK Market"],
   },
   {
-    url: "https://www.vapeplay.pk/",
-    domain: "vapeplay.pk",
-    name: "VapePlay.pk",
-    desc: "Online vape store serving Pakistan — vape kits, e-liquids, accessories.",
-    img: "https://www.vapeplay.pk/assets/img/logo/vapeplaypk.webp",
+    url: "https://www.vapesuite.co.uk",
+    domain: "vapesuite.co.uk",
+    name: "Vapesuite",
+    desc: "Customized storefront for vape retail brand.",
+    img: "https://www.vapesuite.co.uk/assets/img/logo/vape-suite.svg",
     imgFit: "contain",
     icon: Store,
     tags: ["E-commerce", "Pakistan"],
@@ -218,55 +218,6 @@ const Store: React.FC<SVGIconProps> = (props) => (
 
 // --- PROJECTS DATA ---
 const PROJECTS = [
-  {
-    url: "https://www.webcomforts.com",
-    domain: "webcomforts.com",
-    name: "Webcomforts",
-    desc: "Professional e-commerce web development solutions.",
-    img: "https://www.webcomforts.com/mtill-uploads/files/web-comforts-logo-128.svg",
-    imgFit: "contain",
-    icon: Store,
-    tags: ["E-commerce", "Development"],
-  },
-  {
-    url: "https://www.vapesuite.co.uk",
-    domain: "vapesuite.co.uk",
-    name: "Vapesuite",
-    desc: "Customized storefront for vape retail brand.",
-    img: "https://www.vapesuite.co.uk/assets/img/logo/vape-suite.svg",
-    imgFit: "contain",
-    icon: Store,
-    tags: ["Retail", "Branding"],
-  }
-];
-
-import React from "react";
-
-// --- SVG Icon Definition ---
-interface SVGIconProps extends React.SVGProps<SVGSVGElement> {}
-
-const Store: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7" />
-    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-    <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4" />
-    <path d="M2 7h20" />
-    <path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 10V7" />
-  </svg>
-);
-
-// --- PROJECTS DATA ---
-const PROJECTS = [
-  {
-    url: "https://www.zeba.pk/",
-    domain: "zeba.pk",
-    name: "Zeba.pk",
-    desc: "Women's fashion & undergarments e-commerce, Pakistan — abayas, nightwear, shapewear, skincare.",
-    img: "https://www.zeba.pk/assets/images/zeba-pk.svg",
-    imgFit: "contain",
-    icon: Store,
-    tags: ["E-commerce", "SEO"],
-  },
   {
     url: "https://www.webcomforts.com",
     domain: "webcomforts.com",
@@ -342,7 +293,6 @@ export default function App() {
     </div>
   );
 }
-
 const WHATSAPP_IMG = "/images/whatsapp.svg";
 const PROFILE_IMG = "https://z-cdn-media.chatglm.cn/files/20f88d85-236a-491b-9288-11ede87d363f.png?auth_key=1882906137-c210396973e54324af80563658ce48c0-0-f125cb28b7727a158eaf54bbff4f435b";
 
