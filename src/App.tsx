@@ -186,6 +186,114 @@ const PROJECTS = [
   },
 ];
 
+import React from "react";
+
+// --- SVG Icon Definition ---
+interface SVGIconProps extends React.SVGProps<SVGSVGElement> {}
+
+const Store: React.FC<SVGIconProps> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7" />
+    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+    <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4" />
+    <path d="M2 7h20" />
+    <path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 10V7" />
+  </svg>
+);
+
+import React from "react";
+
+// --- SVG Icon Definition (Yeh missing tha) ---
+interface SVGIconProps extends React.SVGProps<SVGSVGElement> {}
+
+const Store: React.FC<SVGIconProps> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7" />
+    <path d="M4 12v8 a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+    <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4" />
+    <path d="M2 7h20" />
+    <path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 10V7" />
+  </svg>
+);
+
+// --- PROJECTS DATA ---
+const PROJECTS = [
+  {
+    url: "https://www.webcomforts.com",
+    domain: "webcomforts.com",
+    name: "Webcomforts",
+    desc: "Professional e-commerce web development solutions.",
+    img: "https://www.webcomforts.com/mtill-uploads/files/web-comforts-logo-128.svg",
+    imgFit: "contain",
+    icon: Store,
+    tags: ["E-commerce", "Development"],
+  },
+  {
+    url: "https://www.vapesuite.co.uk",
+    domain: "vapesuite.co.uk",
+    name: "Vapesuite",
+    desc: "Customized storefront for vape retail brand.",
+    img: "https://www.vapesuite.co.uk/assets/img/logo/vape-suite.svg",
+    imgFit: "contain",
+    icon: Store,
+    tags: ["Retail", "Branding"],
+  }
+];
+
+// --- PROJECT CARD COMPONENT ---
+function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
+  const Icon = project.icon;
+  return (
+    <a
+      href={project.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300"
+    >
+      <div className="w-full h-48 bg-gray-50 p-4 flex items-center justify-center overflow-hidden">
+        <img
+          src={project.img}
+          alt={project.name}
+          className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+        />
+      </div>
+      
+      <div className="p-5">
+        <div className="flex items-center gap-2 mb-2">
+            <Icon className="w-4 h-4 text-indigo-600" />
+            <p className="text-xs font-semibold text-indigo-600 uppercase tracking-wider">{project.domain}</p>
+        </div>
+        <h3 className="text-xl font-bold text-gray-900 mb-2">{project.name}</h3>
+        <p className="text-gray-600 text-sm mb-4">{project.desc}</p>
+        <div className="flex flex-wrap gap-2">
+          {project.tags.map((tag) => (
+            <span key={tag} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </a>
+  );
+}
+
+// --- MAIN APP ---
+export default function App() {
+  return (
+    <div className="min-h-screen bg-gray-50 py-12 px-4">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-10">My Projects</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {PROJECTS.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const WHATSAPP_IMG = "/images/whatsapp.svg";
 const PROFILE_IMG = "https://z-cdn-media.chatglm.cn/files/20f88d85-236a-491b-9288-11ede87d363f.png?auth_key=1882906137-c210396973e54324af80563658ce48c0-0-f125cb28b7727a158eaf54bbff4f435b";
 
