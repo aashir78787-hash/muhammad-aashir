@@ -221,53 +221,40 @@ const SKILLS = [
   },
 ];
 
-function ProjectCard({ project }: { project: (typeof PROJECTS)[number] }) {
+// --- PROJECT CARD COMPONENT ---
+function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
   const Icon = project.icon;
-
   return (
-
-    href = { project.url }
-      target = "_blank"
-  rel = "noopener noreferrer"
-  className = "group flex flex-col rounded-2xl border border-neutral-200 bg-white overflow-hidden hover:shadow-lg transition-shadow"
+    <a
+      href={project.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300"
     >
-    {/* Logo container — fixed aspect ratio, image never cropped */ }
-    < div className = "relative w-full aspect-[16/9] bg-neutral-50 flex items-center justify-center overflow-hidden" >
-      <img
-        src={project.img}
-        alt={`${project.name} logo`}
-        className={
-          project.imgFit === "contain"
-            ? "w-full h-full object-contain p-6"
-            : "w-full h-full object-cover"
-        }
-        loading="lazy"
-      />
-      </div >
-
-    <div className="flex flex-col gap-2 p-5">
-      <div className="flex items-center gap-2 text-neutral-500 text-sm">
-        <Icon className="w-4 h-4" />
-        <span>{project.domain}</span>
+      <div className="w-full h-48 bg-gray-50 p-4 flex items-center justify-center overflow-hidden">
+        <img
+          src={project.img}
+          alt={project.name}
+          className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+        />
       </div>
-      <h3 className="text-lg font-semibold text-neutral-900">
-        {project.name}
-      </h3>
-      <p className="text-sm text-neutral-600 leading-relaxed">
-        {project.desc}
-      </p>
-      <div className="flex flex-wrap gap-2 mt-2">
-        {project.tags.map((tag) => (
-          <span
-            key={tag}
-            className="text-xs px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-700"
-          >
-            {tag}
-          </span>
-        ))}
+      
+      <div className="p-5">
+        <div className="flex items-center gap-2 mb-2">
+            <Icon className="w-4 h-4 text-indigo-600" />
+            <p className="text-xs font-semibold text-indigo-600 uppercase tracking-wider">{project.domain}</p>
+        </div>
+        <h3 className="text-xl font-bold text-gray-900 mb-2">{project.name}</h3>
+        <p className="text-gray-600 text-sm mb-4">{project.desc}</p>
+        <div className="flex flex-wrap gap-2">
+          {project.tags.map((tag) => (
+            <span key={tag} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
-    </div>
-    </a >
+    </a>
   );
 }
 
