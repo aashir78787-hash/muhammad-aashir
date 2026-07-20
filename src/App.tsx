@@ -133,84 +133,53 @@ const SKILLS = [
   },
 ];
 
-const PROJECTS = [
-  {
-    name: "Web Comforts",
-    domain: "webcomforts.com",
-    url: "https://www.webcomforts.com",
-    img: "https://www.webcomforts.com/mtill-uploads/files/web-comforts-logo-128.svg",
-    imgFit: "contain",
-    icon: Store,
-    desc: "A professional business website with clean design and optimized on-page structure.",
-    tags: ["Web Design", "SEO", "Branding"],
-  },
-  {
-    name: "Vape Suite",
-    domain: "vapesuite.co.uk",
-    url: "https://www.vapesuite.co.uk",
-    img: "https://www.vapesuite.co.uk/assets/img/logo/vape-suite.svg",
-    imgFit: "contain",
-    icon: ShoppingBag,
-    desc: "An e-commerce storefront built for conversions, with SEO-driven product pages.",
-    tags: ["E-commerce", "SEO", "UX"],
-  },
-  // 🔽 Replace these with your real existing projects 🔽
-  {
-    name: "Project Name",
-    domain: "example.com",
-    url: "https://example.com",
-    img: "https://example.com/logo.svg",
-    imgFit: "contain",
-    icon: Stethoscope,
-    desc: "Short description of this project.",
-    tags: ["Tag1", "Tag2"],
-  },
-];
-
 function ProjectCard({ project }: { project: (typeof PROJECTS)[number] }) {
   const Icon = project.icon;
 
   return (
-    
-      href={project.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group flex flex-col rounded-2xl border border-neutral-200 bg-white overflow-hidden hover:shadow-lg transition-shadow"
-    >
-      {/* Logo container — fixed aspect ratio, image never cropped */}
-      <div className="relative w-full aspect-[16/9] bg-neutral-50 flex items-center justify-center overflow-hidden p-6">
-        <img
-          src={project.img}
-          alt={`${project.name} logo`}
-          className="max-w-full max-h-full w-auto h-auto object-contain"
-          loading="lazy"
-          referrerPolicy="no-referrer"
-        />
-      </div>
 
-      <div className="flex flex-col gap-2 p-5">
-        <div className="flex items-center gap-2 text-neutral-500 text-sm">
-          <Icon className="w-4 h-4" />
-          <span>{project.domain}</span>
-        </div>
-        <h3 className="text-lg font-semibold text-neutral-900">
-          {project.name}
-        </h3>
-        <p className="text-sm text-neutral-600 leading-relaxed">
-          {project.desc}
-        </p>
-        <div className="flex flex-wrap gap-2 mt-2">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="text-xs px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-700"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+    href = { project.url }
+      target = "_blank"
+  rel = "noopener noreferrer"
+  className = "group flex flex-col rounded-2xl border border-neutral-200 bg-white overflow-hidden hover:shadow-lg transition-shadow"
+    >
+    {/* Logo container — fixed aspect ratio, image never cropped */ }
+    < div className = "relative w-full aspect-[16/9] bg-neutral-50 flex items-center justify-center overflow-hidden" >
+      <img
+        src={project.img}
+        alt={`${project.name} logo`}
+        className={
+          project.imgFit === "contain"
+            ? "w-full h-full object-contain p-6"
+            : "w-full h-full object-cover"
+        }
+        loading="lazy"
+      />
+      </div >
+
+    <div className="flex flex-col gap-2 p-5">
+      <div className="flex items-center gap-2 text-neutral-500 text-sm">
+        <Icon className="w-4 h-4" />
+        <span>{project.domain}</span>
       </div>
-    </a>
+      <h3 className="text-lg font-semibold text-neutral-900">
+        {project.name}
+      </h3>
+      <p className="text-sm text-neutral-600 leading-relaxed">
+        {project.desc}
+      </p>
+      <div className="flex flex-wrap gap-2 mt-2">
+        {project.tags.map((tag) => (
+          <span
+            key={tag}
+            className="text-xs px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-700"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+    </a >
   );
 }
 
