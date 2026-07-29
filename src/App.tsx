@@ -1034,9 +1034,13 @@ export default function App() {
         <div className="max-w-screen-2xl mx-auto px-6">
           <div className="grid grid-cols-12 items-center h-16 sm:h-[4.5rem]">
             <div className="col-span-4 flex items-center gap-3">
-              <div className="w-9 h-9 bg-accent rounded-lg flex items-center justify-center shadow-sm spin-slow" style={{ animationDuration: "18s" }}>
-                <span className="text-white font-geist font-bold text-sm">MA</span>
-              </div>
+              <div className="w-9 h-9 bg-accent rounded-lg flex items-center justify-center shadow-sm spin-slow overflow-hidden" style={{ animationDuration: "18s" }}>
+  <img 
+    src="/images/profile logo.png" 
+    alt="Logo" 
+    className="w-full h-full object-cover"
+  />
+</div>
               <span className="font-geist font-semibold text-text-primary tracking-tight hidden sm:block">
                 Muhammad Aashir
               </span>
