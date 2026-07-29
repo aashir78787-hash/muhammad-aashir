@@ -135,12 +135,12 @@ const SKILLS = [
 
 const PROJECTS = [
   {
-    url: "https://www.zeba.pk/",
-    domain: "zeba.pk",
-    name: "Zeba.pk",
-    desc: "Women's fashion & undergarments e-commerce, Pakistan — abayas, nightwear, shapewear, skincare.",
-    img: "https://www.zeba.pk/assets/images/zeba-pk.svg",
-    imgFit: "contain",
+    url: "https://bedsuite.co.uk/",
+    domain: "bedsuite.co.uk",
+    name: "bedsuite.co.uk",
+    desc: "Furniture & home furnishings e-commerce, UK — beds, mattresses, sofas, wardrobes, and bedroom furniture.",
+    img: "https://www.webcomforts.com/mtill-uploads/files/e-commerce-web-design-59.webp",
+    imgFit: "cover",
     icon: ShoppingBag,
     tags: ["E-commerce", "SEO"],
   },
@@ -149,7 +149,7 @@ const PROJECTS = [
     domain: "kdicislamabad.com",
     name: "KDIC Islamabad",
     desc: "UK-standard dental clinic in Islamabad — implants, root canals, orthodontics.",
-    img: "https://www.kdicislamabad.com/assets/img/kensington-dental-clinic.png",
+    img: "https://www.webcomforts.com/mtill-uploads/files/dental-web-design-61.webp",
     imgFit: "cover",
     icon: Stethoscope,
     tags: ["Healthcare", "Local SEO"],
@@ -159,7 +159,7 @@ const PROJECTS = [
     domain: "hiddenhills.pk",
     name: "Hidden Hills",
     desc: "Luxury hotel & resort in Mansehra, KPK — accommodations, dining, events, online booking.",
-    img: "https://www.hiddenhills.pk/assets/img/logo/hiddenhills-hotel-&-resorts-logo.webp",
+    img: "https://www.webcomforts.com/mtill-uploads/files/hotel-web-design-60.webp",
     imgFit: "cover",
     icon: Mountain,
     tags: ["Hospitality", "Booking Site"],
@@ -169,8 +169,8 @@ const PROJECTS = [
     domain: "ninja-vapes.co.uk",
     name: "Ninja Vapes UK",
     desc: "UK online vape store — e-liquids, nic salts, pod kits, coils, same-day dispatch.",
-    img: "https://www.ninja-vapes.co.uk/assets/img/ninja-vapes-logo.webp",
-    imgFit: "cover",
+    img: "https://www.ninja-vapes.co.uk/assets/img/ninja-vapes-logo.webp?v=2",
+    imgFit: "contain",
     icon: Store,
     tags: ["E-commerce", "UK Market"],
   },
@@ -179,8 +179,8 @@ const PROJECTS = [
     domain: "vapesuite.co.uk",
     name: "Vapesuite",
     desc: "Boosted organic website traffic and engagement through strategic SEO.",
-    img: "https://www.vapesuite.co.uk/assets/img/logo/vape-suite.svg",
-    imgFit: "contain",
+    img: "https://www.webcomforts.com/mtill-uploads/files/vapesuite-web-design-191.webp",
+    imgFit: "cover",
     icon: Store,
     tags: ["E-commerce", "United Kingdom"],
   },
@@ -189,7 +189,7 @@ const PROJECTS = [
     domain: "webcomforts.com",
     name: "Webcomforts",
     desc: "Professional e-commerce web development solutions.",
-    img: "https://www.webcomforts.com/mtill-uploads/files/web-comforts-logo-128.svg",
+    img: "images/Webcomforts.png",
     imgFit: "contain",
     icon: Store,
     tags: ["E-commerce", "Development"],
@@ -1109,9 +1109,9 @@ export default function App() {
               </div>
 
               <h1 className="font-geist font-semibold clamp-hero tracking-tight leading-[1.1] mb-6" style={{ perspective: "800px" }}>
-                <div><WordReveal text="Hi, I'm" delay={0.80} /></div>
-                <div><WordReveal text="Muhammad" delay={0.35} className="text-accent text-glow-anim" /></div>
-                <div><WordReveal text="Aashir" delay={0.55} /></div>
+                <div><WordReveal text="Hi, I'm" delay={0.80} className="text-3xl" /></div>
+                <div><WordReveal text="Muhammad" delay={0.35} className="text-7xl text-accent text-glow-anim" /></div>
+                <div><WordReveal text="Aashir" delay={0.55} className="text-5xl"  /></div>
               </h1>
 
               <p
