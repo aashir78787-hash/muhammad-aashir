@@ -1628,14 +1628,8 @@ export default function App() {
                   </div>
                 </a>
 
-                <a href="https://wa.me/923203530366" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group p-3 -mx-3 rounded-xl hover:bg-bg-secondary transition-colors">
-                  <div className="w-12 h-12 bg-accent-light rounded-xl flex items-center justify-center group-hover:bg-accent transition-all">
-                    <img src={WHATSAPP_IMG} alt="WhatsApp" className="w-5 h-5" loading="lazy" referrerPolicy="no-referrer" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold text-text-primary group-hover:text-accent transition-colors">WhatsApp</div>
-                    <div className="text-xs text-text-tertiary">+92 320 3530366</div>
-                  </div>
+                <a href="https://wa.me/923203530366" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="inline-flex w-12 h-12 bg-accent-light rounded-xl items-center justify-center hover:bg-accent transition-all group">
+                  <img src={WHATSAPP_IMG} alt="WhatsApp" className="w-5 h-5" loading="lazy" referrerPolicy="no-referrer" />
                 </a>
 
                 <div className="flex items-center gap-4 group p-3 -mx-3 rounded-xl hover:bg-bg-secondary transition-colors">
@@ -1716,16 +1710,16 @@ export default function App() {
 
       {/* ========== WHATSAPP FLOAT ========== */}
       <div className="fixed bottom-4 left-4 z-50 wa-float">
-  
-    <a href="https://wa.me/923203530366"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="WhatsApp"
-    className="group inline-flex w-12 h-12 items-center justify-center bg-accent rounded-2xl shadow-lg hover-border-accent transition-all"
-  >
-    <img src={WHATSAPP_IMG} alt="WhatsApp" className="w-5 h-5" loading="lazy" referrerPolicy="no-referrer" />
-  </a>
-</div>
+        <a
+          href="https://wa.me/923203530366"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+          className="group inline-flex w-12 h-12 items-center justify-center bg-accent rounded-2xl shadow-lg hover-border-accent transition-all"
+        >
+          <img src={WHATSAPP_IMG} alt="WhatsApp" className="w-5 h-5" loading="lazy" referrerPolicy="no-referrer" />
+        </a>
+      </div>
 
       {/* ========== FOOTER ========== */}
       <footer className="bg-bg-secondary border-t border-border-light py-16">
