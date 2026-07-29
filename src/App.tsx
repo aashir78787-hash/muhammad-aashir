@@ -1716,21 +1716,16 @@ export default function App() {
 
       {/* ========== WHATSAPP FLOAT ========== */}
       <div className="fixed bottom-4 left-4 z-50 wa-float">
-        <a
-          href="https://wa.me/923203530366"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group inline-flex items-center gap-2 bg-white/95 backdrop-blur-md border border-border-light rounded-2xl shadow-lg hover-border-accent transition-all px-4 py-3"
-        >
-          <div className="wa-icon-wrap w-10 h-10 rounded-xl bg-accent flex items-center justify-center">
-            <img src={WHATSAPP_IMG} alt="WhatsApp" className="w-5 h-5" loading="lazy" referrerPolicy="no-referrer" />
-          </div>
-          <div className="leading-tight">
-            <div className="text-xs font-bold tracking-wide uppercase text-text-tertiary">WhatsApp</div>
-            <div className="text-sm font-semibold text-text-primary">+92 320 3530366</div>
-          </div>
-        </a>
-      </div>
+  
+    <a href="https://wa.me/923203530366"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp"
+    className="group inline-flex w-12 h-12 items-center justify-center bg-accent rounded-2xl shadow-lg hover-border-accent transition-all"
+  >
+    <img src={WHATSAPP_IMG} alt="WhatsApp" className="w-5 h-5" loading="lazy" referrerPolicy="no-referrer" />
+  </a>
+</div>
 
       {/* ========== FOOTER ========== */}
       <footer className="bg-bg-secondary border-t border-border-light py-16">
