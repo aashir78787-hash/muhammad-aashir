@@ -1709,17 +1709,17 @@ export default function App() {
       </section>
 
       {/* ========== WHATSAPP FLOAT ========== */}
-      <div className="fixed bottom-4 left-4 z-50 wa-float">
-        <a
-          href="https://wa.me/923203530366"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="WhatsApp"
-          className="group inline-flex w-12 h-12 items-center justify-center bg-accent rounded-2xl shadow-lg hover-border-accent transition-all"
-        >
-          <img src={WHATSAPP_IMG} alt="WhatsApp" className="w-5 h-5" loading="lazy" referrerPolicy="no-referrer" />
-        </a>
-      </div>
+  <div className="fixed bottom-4 left-4 z-50 wa-float">
+  <a
+    href="https://wa.me/923203530366"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp"
+    className="group inline-flex w-12 h-12 items-center justify-center rounded-2xl shadow-lg hover-border-accent transition-all"
+  >
+    <img src={WHATSAPP_IMG} alt="WhatsApp" className="w-5 h-5" loading="lazy" referrerPolicy="no-referrer" />
+  </a>
+</div>
 
       {/* ========== FOOTER ========== */}
       <footer className="bg-bg-secondary border-t border-border-light py-16">
