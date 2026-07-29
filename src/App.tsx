@@ -182,42 +182,8 @@ const PROJECTS = [
     img: "https://www.vapesuite.co.uk/assets/img/logo/vape-suite.svg",
     imgFit: "contain",
     icon: Store,
-    tags: ["E-commerce", "United Kindom"],
+    tags: ["E-commerce", "United Kingdom"],
   },
-];
-
-import React from "react";
-
-// --- SVG Icon Definition ---
-interface SVGIconProps extends React.SVGProps<SVGSVGElement> {}
-
-const Store: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7" />
-    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-    <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4" />
-    <path d="M2 7h20" />
-    <path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 10V7" />
-  </svg>
-);
-
-import React from "react";
-
-// --- SVG Icon Definition (Yeh missing tha) ---
-interface SVGIconProps extends React.SVGProps<SVGSVGElement> {}
-
-const Store: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7" />
-    <path d="M4 12v8 a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-    <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4" />
-    <path d="M2 7h20" />
-    <path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 10V7" />
-  </svg>
-);
-
-// --- PROJECTS DATA ---
-const PROJECTS = [
   {
     url: "https://www.webcomforts.com",
     domain: "webcomforts.com",
@@ -228,71 +194,8 @@ const PROJECTS = [
     icon: Store,
     tags: ["E-commerce", "Development"],
   },
-  {
-    url: "https://www.vapesuite.co.uk",
-    domain: "vapesuite.co.uk",
-    name: "Vapesuite",
-    desc: "Customized storefront for vape retail brand.",
-    img: "https://www.vapesuite.co.uk/assets/img/logo/vape-suite.svg",
-    imgFit: "contain",
-    icon: Store,
-    tags: ["Retail", "Branding"],
-  }
 ];
 
-// --- PROJECT CARD COMPONENT ---
-function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
-  const Icon = project.icon;
-  return (
-    <a
-      href={project.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group block bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300"
-    >
-      <div className="w-full h-48 bg-gray-50 p-4 flex items-center justify-center overflow-hidden">
-        <img
-          src={project.img}
-          alt={project.name}
-          className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-        />
-      </div>
-      
-      <div className="p-5">
-        <div className="flex items-center gap-2 mb-2">
-            <Icon className="w-4 h-4 text-indigo-600" />
-            <p className="text-xs font-semibold text-indigo-600 uppercase tracking-wider">{project.domain}</p>
-        </div>
-        <h3 className="text-xl font-bold text-gray-900 mb-2">{project.name}</h3>
-        <p className="text-gray-600 text-sm mb-4">{project.desc}</p>
-        <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
-            <span key={tag} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
-              {tag}
-            </span>
-          ))}
-        </div>
-      </div>
-    </a>
-  );
-}
-
-// --- MAIN APP ---
-export default function App() {
-  return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-10">My Projects</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {PROJECTS.map((project, index) => (
-            <ProjectCard key={index} project={project} />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
 const WHATSAPP_IMG = "/images/whatsapp.svg";
 const PROFILE_IMG = "https://z-cdn-media.chatglm.cn/files/20f88d85-236a-491b-9288-11ede87d363f.png?auth_key=1882906137-c210396973e54324af80563658ce48c0-0-f125cb28b7727a158eaf54bbff4f435b";
 
@@ -309,7 +212,7 @@ const GlobalStyles: React.FC = () => (
       position: relative;
       min-height: 100vh;
     }
-    
+
     .scroll-progress {
       position: fixed;
       top: 0;
@@ -320,7 +223,7 @@ const GlobalStyles: React.FC = () => (
       width: 0%;
       transition: width 0.1s ease-out;
     }
-    
+
     .cursor-glow {
       position: fixed;
       top: 0;
@@ -334,27 +237,27 @@ const GlobalStyles: React.FC = () => (
       transform: translate(-1000px, -1000px);
       transition: transform 0.05s linear;
     }
-    
+
     @media (max-width: 1024px) {
       .cursor-glow {
         display: none;
       }
     }
-    
+
     .nav-shadow {
       box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     }
-    
+
     .nav-shadow-scrolled {
       box-shadow: 0 4px 20px -2px rgba(108, 92, 231, 0.1), 0 2px 10px -1px rgba(108, 92, 231, 0.05);
       background-color: rgba(255, 255, 255, 0.85);
     }
-    
+
     .nav-link {
       position: relative;
       padding: 0.5rem 0;
     }
-    
+
     .nav-link::after {
       content: '';
       position: absolute;
@@ -366,18 +269,18 @@ const GlobalStyles: React.FC = () => (
       transition: all 0.3s ease;
       transform: translateX(-50%);
     }
-    
+
     .nav-link:hover::after,
     .nav-link.active::after {
       width: 100%;
     }
-    
+
     .btn-shine {
       position: relative;
       overflow: hidden;
       transition: all 0.3s ease;
     }
-    
+
     .btn-shine::before {
       content: '';
       position: absolute;
@@ -393,28 +296,28 @@ const GlobalStyles: React.FC = () => (
       );
       transform: skewX(-25deg);
     }
-    
+
     .btn-shine:hover::before {
       animation: shine 0.75s ease;
     }
-    
+
     @keyframes shine {
       100% {
         left: 200%;
       }
     }
-    
+
     .hero-pattern {
       background-color: #f8f9fc;
       background-image: radial-gradient(rgba(108, 92, 231, 0.04) 1.5px, transparent 1.5px);
       background-size: 24px 24px;
     }
-    
+
     .pulse-dot {
       box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.4);
       animation: pulse 2s infinite;
     }
-    
+
     @keyframes pulse {
       0% {
         transform: scale(0.95);
@@ -429,7 +332,7 @@ const GlobalStyles: React.FC = () => (
         box-shadow: 0 0 0 0 rgba(108, 92, 231, 0);
       }
     }
-    
+
     @keyframes textGlow {
       0%, 100% {
         text-shadow: 0 0 10px rgba(108, 92, 231, 0.1), 0 0 20px rgba(108, 92, 231, 0.05);
@@ -438,86 +341,86 @@ const GlobalStyles: React.FC = () => (
         text-shadow: 0 0 15px rgba(108, 92, 231, 0.2), 0 0 30px rgba(108, 92, 231, 0.1);
       }
     }
-    
+
     .text-glow-anim {
       animation: textGlow 3s infinite ease-in-out;
     }
-    
+
     .word-in {
       opacity: 0;
       transform: translateY(20px);
       animation: wordReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       display: inline-block;
     }
-    
+
     @keyframes wordReveal {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-    
+
     .profile-shadow {
       box-shadow: 0 20px 40px -15px rgba(108, 92, 231, 0.15), 0 15px 25px -10px rgba(108, 92, 231, 0.05);
     }
-    
+
     @keyframes spinSlow {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
-    
+
     .spin-slow {
       animation: spinSlow 20s linear infinite;
     }
-    
+
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-10px); }
     }
-    
+
     .float-animation {
       animation: float 6s ease-in-out infinite;
     }
-    
+
     .marquee-track {
       animation: marquee 25s linear infinite;
     }
-    
+
     @keyframes marquee {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
-    
+
     .reveal-on-scroll {
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    
+
     .reveal-on-scroll.revealed {
       opacity: 1;
       transform: translateY(0);
     }
-    
+
     .skill-card {
       position: relative;
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    
+
     .skill-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 30px -10px rgba(108, 92, 231, 0.12), 0 4px 12px -5px rgba(108, 92, 231, 0.05);
       border-color: rgba(108, 92, 231, 0.3);
     }
-    
+
     .skill-card:hover .skill-icon {
       background-color: #6c5ce7;
     }
-    
+
     .skill-card:hover .skill-icon svg {
       color: #ffffff;
     }
-    
+
     .skill-card-glow {
       position: absolute;
       top: 0;
@@ -529,15 +432,15 @@ const GlobalStyles: React.FC = () => (
       opacity: 0;
       transition: opacity 0.5s ease;
     }
-    
+
     .skill-card:hover .skill-card-glow {
       opacity: 1;
     }
-    
+
     .rail-section {
       background-color: #ffffff;
     }
-    
+
     .rail-grid-overlay {
       position: absolute;
       inset: 0;
@@ -546,7 +449,7 @@ const GlobalStyles: React.FC = () => (
       background-size: 40px 40px;
       pointer-events: none;
     }
-    
+
     .ghost-heading {
       position: absolute;
       top: -60px;
@@ -558,14 +461,14 @@ const GlobalStyles: React.FC = () => (
       pointer-events: none;
       font-family: 'Geist', sans-serif;
     }
-    
+
     @media (max-width: 640px) {
       .ghost-heading {
         font-size: 80px;
         top: -40px;
       }
     }
-    
+
     .rail-progress-track {
       height: 4px;
       background: #e2e8f0;
@@ -573,7 +476,7 @@ const GlobalStyles: React.FC = () => (
       overflow: hidden;
       position: relative;
     }
-    
+
     .rail-progress-fill {
       height: 100%;
       background: #6c5ce7;
@@ -581,24 +484,24 @@ const GlobalStyles: React.FC = () => (
       transition: width 0.3s ease;
       width: 0%;
     }
-    
+
     .rail-nav-btn {
       transition: all 0.3s ease;
     }
-    
+
     .rail-nav-btn:hover {
       transform: scale(1.05);
     }
-    
+
     .rail-nav-btn:active {
       transform: scale(0.95);
     }
-    
+
     .rail-track-wrap {
       position: relative;
       width: 100%;
     }
-    
+
     .rail-fade {
       position: absolute;
       top: 0;
@@ -607,23 +510,23 @@ const GlobalStyles: React.FC = () => (
       z-index: 5;
       pointer-events: none;
     }
-    
+
     .rail-fade-left {
       left: -1px;
       background: linear-gradient(to right, #ffffff, transparent);
     }
-    
+
     .rail-fade-right {
       right: -1px;
       background: linear-gradient(to left, #ffffff, transparent);
     }
-    
+
     @media (max-width: 768px) {
       .rail-fade {
         width: 30px;
       }
     }
-    
+
     #rail-track {
       display: flex;
       gap: 28px;
@@ -635,29 +538,29 @@ const GlobalStyles: React.FC = () => (
       cursor: grab;
       user-select: none;
     }
-    
+
     #rail-track::-webkit-scrollbar {
       display: none;
     }
-    
+
     #rail-track.is-dragging {
       cursor: grabbing;
       scroll-snap-type: none;
     }
-    
+
     .rail-card {
       flex: 0 0 380px;
       scroll-snap-align: start;
       position: relative;
       perspective: 1000px;
     }
-    
+
     @media (max-width: 640px) {
       .rail-card {
         flex: 0 0 300px;
       }
     }
-    
+
     .rail-card-index {
       font-family: monospace;
       font-size: 11px;
@@ -666,7 +569,7 @@ const GlobalStyles: React.FC = () => (
       font-weight: 600;
       letter-spacing: 0.1em;
     }
-    
+
     .rail-card-inner {
       border-radius: 16px;
       background: #ffffff;
@@ -676,23 +579,23 @@ const GlobalStyles: React.FC = () => (
       transition: transform 0.1s ease-out, box-shadow 0.3s ease;
       height: 100%;
     }
-    
+
     .rail-card:hover .rail-card-inner {
       box-shadow: 0 20px 40px -15px rgba(108, 92, 231, 0.12);
     }
-    
+
     .rail-card-glow {
       position: absolute;
       inset: 0;
       background: radial-gradient(400px circle at var(--x, 0px) var(--y, 0px), rgba(108, 92, 231, 0.04), transparent 50%);
       pointer-events: none;
     }
-    
+
     .rail-browser {
       border-bottom: 1px solid #e2e8f0;
       background: #f1f5f9;
     }
-    
+
     .rail-browser-bar {
       height: 36px;
       display: flex;
@@ -701,28 +604,28 @@ const GlobalStyles: React.FC = () => (
       background: #f8fafc;
       border-bottom: 1px solid #e2e8f0;
     }
-    
+
     .rail-browser-bar span {
       margin-right: 4px;
     }
-    
+
     .rail-browser-media {
       height: 200px;
       overflow: hidden;
       position: relative;
       background: #f8fafc;
     }
-    
+
     .rail-browser-media img {
       width: 100%;
       height: 100%;
       transition: transform 0.5s ease;
     }
-    
+
     .rail-card:hover .rail-browser-media img {
       transform: scale(1.03);
     }
-    
+
     .rail-badge {
       position: absolute;
       top: 12px;
@@ -740,7 +643,7 @@ const GlobalStyles: React.FC = () => (
       gap: 6px;
       z-index: 10;
     }
-    
+
     .rail-badge-dot {
       width: 6px;
       height: 6px;
@@ -748,63 +651,63 @@ const GlobalStyles: React.FC = () => (
       background: #22c55e;
       animation: flash 1.5s infinite;
     }
-    
+
     @keyframes flash {
       0%, 100% { opacity: 0.4; }
       50% { opacity: 1; }
     }
-    
+
     .rail-card-body {
       padding: 24px;
     }
-    
+
     .rail-browser-dashed {
       border: 2px dashed #e2e8f0;
       border-radius: 12px;
       overflow: hidden;
     }
-    
+
     .rail-plus {
       transition: transform 0.3s ease;
     }
-    
+
     .rail-card:hover .rail-plus {
       transform: scale(1.1) rotate(90deg);
     }
-    
+
     .input-focus {
       transition: all 0.3s ease;
       outline: none;
     }
-    
+
     .input-focus:focus {
       border-color: #6c5ce7;
       box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.15);
     }
-    
+
     .card-shadow {
       box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.05);
     }
-    
+
     .card-shadow-hover:hover {
       box-shadow: 0 20px 40px -15px rgba(108, 92, 231, 0.1);
     }
-    
+
     .wa-float {
       animation: bounceSlow 3s ease-in-out infinite;
     }
-    
+
     @keyframes bounceSlow {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-8px); }
     }
-    
+
     .toast {
       transform: translateY(100px);
       opacity: 0;
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    
+
     .toast.show {
       transform: translateY(0);
       opacity: 1;
@@ -1280,7 +1183,7 @@ export default function App() {
 
                 <div className="relative w-72 h-80 sm:w-80 sm:h-[360px] lg:w-[380px] lg:h-[420px] rounded-2xl overflow-hidden profile-shadow bg-white border border-border-light">
                   <img
-                    src="https://z-cdn-media.chatglm.cn/files/20f88d85-236a-491b-9288-11ede87d363f.png?auth_key=1882906137-c210396973e54324af80563658ce48c0-0-f125cb28b7727a158eaf54bbff4f435b"
+                    src={PROFILE_IMG}
                     alt="Muhammad Aashir - Professional Profile Photo"
                     className="w-full h-full object-cover object-top"
                     loading="eager"
@@ -1337,7 +1240,7 @@ export default function App() {
                 className="relative aspect-[4/5] rounded-2xl overflow-hidden card-shadow bg-bg-secondary"
                 style={{ transition: "transform .3s ease-out" }}
               >
-                <img src="https://z-cdn-media.chatglm.cn/files/20f88d85-236a-491b-9288-11ede87d363f.png?auth_key=1882906137-c210396973e54324af80563658ce48c0-0-f125cb28b7727a158eaf54bbff4f435b" alt="Muhammad Aashir" className="w-full h-full object-cover object-top" referrerPolicy="no-referrer" />
+                <img src={PROFILE_IMG} alt="Muhammad Aashir" className="w-full h-full object-cover object-top" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6">
                   <div className="bg-accent text-white text-xs font-bold tracking-wide uppercase px-5 py-2.5 rounded-lg shadow-md">
@@ -1467,7 +1370,7 @@ export default function App() {
 
             <div className="hidden md:flex items-center gap-5 shrink-0">
               <div className="rail-progress-track w-40">
-                <div ref={(el) => (progressElsRef.current[0] = el)} className="rail-progress-fill" style={{ width: "16.66%" }} />
+                <div ref={(el) => (progressElsRef.current[0] = el)} className="rail-progress-fill" style={{ width: `${100 / (PROJECTS.length + 1)}%` }} />
               </div>
               <div className="font-mono text-sm text-text-secondary whitespace-nowrap">
                 <span ref={(el) => (counterElsRef.current[0] = el)} className="text-text-primary font-semibold">
@@ -1518,8 +1421,12 @@ export default function App() {
                             </div>
                           </div>
                           <div
-                            className="rail-browser-media animate-pulse-placeholder"
-                            style={p.imgFit === "contain" ? { display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem", background: "#fff" } : {}}
+                            className="rail-browser-media"
+                            style={
+                              p.imgFit === "contain"
+                                ? { display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem", background: "#fff" }
+                                : {}
+                            }
                           >
                             <span className="rail-badge">
                               <span className="rail-badge-dot" />
@@ -1590,7 +1497,7 @@ export default function App() {
           {/* Mobile nav row */}
           <div className="flex md:hidden items-center justify-between mt-8">
             <div className="rail-progress-track flex-1 mr-5">
-              <div ref={(el) => (progressElsRef.current[1] = el)} className="rail-progress-fill" style={{ width: "16.66%" }} />
+              <div ref={(el) => (progressElsRef.current[1] = el)} className="rail-progress-fill" style={{ width: `${100 / (PROJECTS.length + 1)}%` }} />
             </div>
             <div className="font-mono text-sm text-text-secondary whitespace-nowrap mr-4">
               <span ref={(el) => (counterElsRef.current[1] = el)} className="text-text-primary font-semibold">
@@ -1656,7 +1563,7 @@ export default function App() {
             <div className="card-shadow-hover bg-white border border-border-light rounded-2xl p-7 text-left card-shadow">
               <div className="flex items-center gap-4 mb-5">
                 <div className="w-14 h-14 rounded-xl overflow-hidden border border-border-light">
-                  <img src="https://z-cdn-media.chatglm.cn/files/20f88d85-236a-491b-9288-11ede87d363f.png?auth_key=1882906137-c210396973e54324af80563658ce48c0-0-f125cb28b7727a158eaf54bbff4f435b" alt="Muhammad Aashir" className="w-full h-full object-cover object-top" referrerPolicy="no-referrer" />
+                  <img src={PROFILE_IMG} alt="Muhammad Aashir" className="w-full h-full object-cover object-top" referrerPolicy="no-referrer" />
                 </div>
                 <div>
                   <div className="font-semibold text-text-primary text-sm">Muhammad Aashir</div>
