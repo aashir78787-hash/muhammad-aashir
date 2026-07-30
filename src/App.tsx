@@ -4,79 +4,79 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 /* ============================================================
    100% BULLETPROOF INLINE SVG ICONS
    ============================================================ */
-interface SVGIconProps extends React.SVGProps<SVGSVGElement> {}
+interface SVGIconProps extends React.SVGProps<SVGSVGElement> { }
 
 const ArrowRight: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
 );
 const ArrowLeft: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
 );
 const ArrowUpRight: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg>
 );
 const ExternalLink: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" x2="21" y1="14" y2="3" /></svg>
 );
 const Target: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>
 );
 const Lightbulb: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" /><path d="M9 18h6" /><path d="M10 22h4" /></svg>
 );
 const Users: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
 );
 const Zap: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
 );
 const Code2: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="m18 16 4-4-4-4" /><path d="m6 8-4 4 4 4" /><path d="m14.5 4-5 16" /></svg>
 );
 const FileSearch: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M4.268 21a2 2 0 0 0 1.727 1H18a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="m9 18-1.5-1.5"/><circle cx="5" cy="14" r="3"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M4.268 21a2 2 0 0 0 1.727 1H18a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3" /><path d="m9 18-1.5-1.5" /><circle cx="5" cy="14" r="3" /></svg>
 );
 const Link2: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M9 17H7A5 5 0 0 1 7 7h2" /><path d="M15 7h2a5 5 0 1 1 0 10h-2" /><line x1="8" x2="16" y1="12" y2="12" /></svg>
 );
 const Settings: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" /><circle cx="12" cy="12" r="3" /></svg>
 );
 const Palette: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><circle cx="13.5" cy="6.5" r=".5" fill="currentColor" /><circle cx="17.5" cy="10.5" r=".5" fill="currentColor" /><circle cx="8.5" cy="7.5" r=".5" fill="currentColor" /><circle cx="6.5" cy="12.5" r=".5" fill="currentColor" /><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" /></svg>
 );
 const Megaphone: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="m3 11 18-5v12L3 14v-3z" /><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" /></svg>
 );
 const Share2: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" /><line x1="8.59" x2="15.42" y1="13.51" y2="17.49" /><line x1="15.41" x2="8.59" y1="6.51" y2="10.49" /></svg>
 );
 const ShoppingBag: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" /><path d="M3 6h18" /><path d="M16 10a4 4 0 0 1-8 0" /></svg>
 );
 const Stethoscope: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M4 4v3a8 8 0 0 0 8 8v0a8 8 0 0 0 8-8V4"/><path d="M12 15v4a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-3"/><circle cx="6" cy="16" r="2"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M4 4v3a8 8 0 0 0 8 8v0a8 8 0 0 0 8-8V4" /><path d="M12 15v4a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-3" /><circle cx="6" cy="16" r="2" /></svg>
 );
 const Mountain: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="m8 3 4 8 5-5 5 15H2L8 3z" /></svg>
 );
 const Store: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 10V7"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7" /><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" /><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4" /><path d="M2 7h20" /><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 10V7" /></svg>
 );
 const Plus: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M5 12h14" /><path d="M12 5v14" /></svg>
 );
 const Mail: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
 );
 const MapPin: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
 );
 const Send: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><line x1="22" x2="11" y1="2" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>
 );
 const LinkedIn: React.FC<SVGIconProps> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
 );
 
 /* ============================================================
@@ -193,8 +193,28 @@ const PROJECTS = [
     img: "images/Webcomforts.png",
     imgFit: "contain",
     icon: Store,
-    tags: ["E-commerce", "Development"],
+    tags: ["Web Design", "Development"],
   },
+{
+  url: "https://www.naataudio.com",
+  domain: "naataudio.com",
+  name: "NaatAudio",
+  desc: "Developed and optimized an Islamic audio streaming platform, enhancing user experience, SEO, and content accessibility.",
+  img: "https://www.naataudio.com/img/NaatAudio.png",
+  imgFit: "contain",
+  icon: Store,
+  tags: ["Audio Streaming", "Islamic Platform"],
+},
+{
+  url: "https://www.epoxyres-it.co.uk/",
+  domain: "epoxyres-it.co.uk",
+  name: "Epoxy Res-IT",
+  desc: "Designed and optimized a UK epoxy resin e-commerce website, improving user experience, product discovery, and online conversions.",
+  img: "https://www.webcomforts.com/mtill-uploads/files/epoxy-res-it-293.webp",
+  imgFit: "cover",
+  icon: Store,
+  tags: ["E-commerce", "United Kingdom"],
+},
 ];
 
 const WHATSAPP_IMG = "/images/whatsapp.svg";
@@ -1026,21 +1046,20 @@ export default function App() {
 
       {/* ========== NAVIGATION ========== */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-xl border-b border-border-light ${
-          navScrolled ? "nav-shadow-scrolled" : "nav-shadow"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-xl border-b border-border-light ${navScrolled ? "nav-shadow-scrolled" : "nav-shadow"
+          }`}
         style={{ transition: "box-shadow .3s ease" }}
       >
         <div className="max-w-screen-2xl mx-auto px-6">
           <div className="grid grid-cols-12 items-center h-16 sm:h-[4.5rem]">
             <div className="col-span-4 flex items-center gap-3">
               <div className="w-9 h-9 bg-accent rounded-lg flex items-center justify-center shadow-sm spin-slow overflow-hidden" style={{ animationDuration: "18s" }}>
-  <img 
-    src="/images/profile logo.png" 
-    alt="Logo" 
-    className="w-full h-full object-cover"
-  />
-</div>
+                <img
+                  src="/images/profile logo.png"
+                  alt="Logo"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <span className="font-geist font-semibold text-text-primary tracking-tight hidden sm:block">
                 Muhammad Aashir
               </span>
@@ -1051,11 +1070,10 @@ export default function App() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => scrollToHash(e, link.href)}
-                  className={`nav-link text-sm font-medium transition-colors ${
-                    activeSection === link.href.slice(1)
+                  className={`nav-link text-sm font-medium transition-colors ${activeSection === link.href.slice(1)
                       ? "text-accent font-semibold active"
                       : "text-text-secondary hover:text-accent"
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </a>
@@ -1116,7 +1134,7 @@ export default function App() {
               <h1 className="font-geist font-semibold clamp-hero tracking-tight leading-[1.1] mb-6" style={{ perspective: "800px" }}>
                 <div><WordReveal text="Hi, I'm" delay={0.80} className="text-3xl" /></div>
                 <div><WordReveal text="Muhammad" delay={0.35} className="text-6xl text-accent text-glow-anim" /></div>
-                <div><WordReveal text="Aashir" delay={0.55} className="text-5xl"  /></div>
+                <div><WordReveal text="Aashir" delay={0.55} className="text-5xl" /></div>
               </h1>
 
               <p
@@ -1149,12 +1167,12 @@ export default function App() {
               </div>
 
               <div
-                className="reveal-on-scroll grid grid-cols-3 gap-6 mt-14 pt-10 border-t border-border-light"
+                className=" grid grid-cols-3 gap-6 mt-14 pt-10 border-t border-border-light"
                 style={{ transitionDelay: "1.05s" }}
               >
                 {[
                   ["2+", "Years Exp."],
-                  ["5+", "Projects"],
+                  ["7+", "Projects"],
                   ["100%", "Dedication"],
                 ].map(([num, label]) => (
                   <div key={label}>
@@ -1207,7 +1225,7 @@ export default function App() {
           </div>
         </div>
 
-       
+
       </section>
 
       {/* ========== MARQUEE ========== */}
@@ -1603,70 +1621,70 @@ export default function App() {
               </p>
 
               <div className="reveal-on-scroll space-y-5" style={{ transitionDelay: "0.3s" }}>
-  {/* LinkedIn */}
-  <a
-    href="https://www.linkedin.com/in/muhammad-aashir-a8328a355/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center gap-4 group p-3 -mx-3 rounded-xl hover:bg-bg-secondary transition-colors"
-  >
-    <div className="w-12 h-12 bg-accent-light rounded-xl flex items-center justify-center group-hover:bg-accent transition-all">
-      <LinkedInIcon className="w-5 h-5 text-accent group-hover:text-white transition-colors" />
-    </div>
-    <div>
-      <div className="text-sm font-semibold text-text-primary group-hover:text-accent transition-colors">LinkedIn</div>
-      <div className="text-xs text-text-tertiary">Muhammad Aashir</div>
-    </div>
-  </a>
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/in/muhammad-aashir-a8328a355/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 group p-3 -mx-3 rounded-xl hover:bg-bg-secondary transition-colors"
+                >
+                  <div className="w-12 h-12 bg-accent-light rounded-xl flex items-center justify-center group-hover:bg-accent transition-all">
+                    <LinkedInIcon className="w-5 h-5 text-accent group-hover:text-white transition-colors" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-text-primary group-hover:text-accent transition-colors">LinkedIn</div>
+                    <div className="text-xs text-text-tertiary">Muhammad Aashir</div>
+                  </div>
+                </a>
 
-  {/* Email */}
-  <a 
-    href="mailto:aashir.muhammad78787@gmail.com" 
-    className="flex items-center gap-4 group p-3 -mx-3 rounded-xl hover:bg-bg-secondary transition-colors"
-  >
-    <div className="w-12 h-12 bg-accent-light rounded-xl flex items-center justify-center group-hover:bg-accent transition-all">
-      <Mail className="w-5 h-5 text-accent group-hover:text-white transition-colors" />
-    </div>
-    <div>
-      <div className="text-sm font-semibold text-text-primary group-hover:text-accent transition-colors">Email</div>
-      <div className="text-xs text-text-tertiary">aashir.muhammad78787@gmail.com</div>
-    </div>
-  </a>
+                {/* Email */}
+                <a
+                  href="mailto:aashir.muhammad78787@gmail.com"
+                  className="flex items-center gap-4 group p-3 -mx-3 rounded-xl hover:bg-bg-secondary transition-colors"
+                >
+                  <div className="w-12 h-12 bg-accent-light rounded-xl flex items-center justify-center group-hover:bg-accent transition-all">
+                    <Mail className="w-5 h-5 text-accent group-hover:text-white transition-colors" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-text-primary group-hover:text-accent transition-colors">Email</div>
+                    <div className="text-xs text-text-tertiary">aashir.muhammad78787@gmail.com</div>
+                  </div>
+                </a>
 
-  {/* WhatsApp (Color Matched with SVG) */}
-  <a 
-    href="https://wa.me/923203530366" 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    aria-label="WhatsApp" 
-    className="flex items-center gap-4 group p-3 -mx-3 rounded-xl hover:bg-bg-secondary transition-colors"
-  >
-    <div className="w-12 h-12 bg-accent-light rounded-xl flex items-center justify-center group-hover:bg-accent transition-all">
-      <svg 
-        className="w-5 h-5 text-accent group-hover:text-white transition-colors" 
-        fill="currentColor" 
-        viewBox="0 0 24 24"
-      >
-        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-      </svg>
-    </div>
-    <div>
-      <div className="text-sm font-semibold text-text-primary group-hover:text-accent transition-colors">WhatsApp</div>
-      <div className="text-xs text-text-tertiary">+92 320 3530366</div>
-    </div>
-  </a>
+                {/* WhatsApp (Color Matched with SVG) */}
+                <a
+                  href="https://wa.me/923203530366"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                  className="flex items-center gap-4 group p-3 -mx-3 rounded-xl hover:bg-bg-secondary transition-colors"
+                >
+                  <div className="w-12 h-12 bg-accent-light rounded-xl flex items-center justify-center group-hover:bg-accent transition-all">
+                    <svg
+                      className="w-5 h-5 text-accent group-hover:text-white transition-colors"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-text-primary group-hover:text-accent transition-colors">WhatsApp</div>
+                    <div className="text-xs text-text-tertiary">+92 320 3530366</div>
+                  </div>
+                </a>
 
-  {/* Location */}
-  <div className="flex items-center gap-4 group p-3 -mx-3 rounded-xl hover:bg-bg-secondary transition-colors">
-    <div className="w-12 h-12 bg-accent-light rounded-xl flex items-center justify-center group-hover:bg-accent transition-all">
-      <MapPin className="w-5 h-5 text-accent group-hover:text-white transition-colors" />
-    </div>
-    <div>
-      <div className="text-sm font-semibold text-text-primary group-hover:text-accent transition-colors">Location</div>
-      <div className="text-xs text-text-tertiary">Islamabad, Pakistan</div>
-    </div>
-  </div>
-</div>
+                {/* Location */}
+                <div className="flex items-center gap-4 group p-3 -mx-3 rounded-xl hover:bg-bg-secondary transition-colors">
+                  <div className="w-12 h-12 bg-accent-light rounded-xl flex items-center justify-center group-hover:bg-accent transition-all">
+                    <MapPin className="w-5 h-5 text-accent group-hover:text-white transition-colors" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-text-primary group-hover:text-accent transition-colors">Location</div>
+                    <div className="text-xs text-text-tertiary">Islamabad, Pakistan</div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="reveal-on-scroll" style={{ transitionDelay: "0.2s" }}>
@@ -1734,17 +1752,17 @@ export default function App() {
       </section>
 
       {/* ========== WHATSAPP FLOAT ========== */}
-<div className="fixed bottom-4 left-4 z-50 wa-float">
-  <a
-    href="https://wa.me/923203530366"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="WhatsApp"
-    className="group inline-flex w-12 h-12 items-center justify-center bg-white rounded-2xl shadow-lg hover-border-accent transition-all"
-  >
-    <img src={WHATSAPP_IMG} alt="WhatsApp" className="w-5 h-5" loading="lazy" referrerPolicy="no-referrer" />
-  </a>
-</div>
+      <div className="fixed bottom-4 left-4 z-50 wa-float">
+        <a
+          href="https://wa.me/923203530366"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+          className="group inline-flex w-12 h-12 items-center justify-center bg-white rounded-2xl shadow-lg hover-border-accent transition-all"
+        >
+          <img src={WHATSAPP_IMG} alt="WhatsApp" className="w-5 h-5" loading="lazy" referrerPolicy="no-referrer" />
+        </a>
+      </div>
 
       {/* ========== FOOTER ========== */}
       <footer className="bg-bg-secondary border-t border-border-light py-16">
