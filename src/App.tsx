@@ -1811,15 +1811,6 @@ export default function App() {
               </div>
             </div>
           </div>
-
-          <div className="mt-12 pt-8 border-t border-border-light flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="text-xs text-text-tertiary">© 2026 Muhammad Aashir. All rights reserved.</div>
-            <div className="flex items-center gap-2 text-xs text-text-tertiary">
-              <span>Built with</span>
-              <span className="text-accent">♥</span>
-              <span>and code</span>
-            </div>
-          </div>
         </div>
       </footer>
 
