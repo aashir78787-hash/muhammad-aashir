@@ -1207,12 +1207,7 @@ export default function App() {
           </div>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-          <span className="text-[10px] uppercase tracking-widest text-text-tertiary font-medium">Scroll</span>
-          <div className="w-5 h-8 border-2 border-border-light rounded-full flex justify-center pt-1.5">
-            <div className="w-1 h-2 bg-text-tertiary rounded-full animate-bounce" />
-          </div>
-        </div>
+       
       </section>
 
       {/* ========== MARQUEE ========== */}
