@@ -1115,7 +1115,7 @@ export default function App() {
 
               <h1 className="font-geist font-semibold clamp-hero tracking-tight leading-[1.1] mb-6" style={{ perspective: "800px" }}>
                 <div><WordReveal text="Hi, I'm" delay={0.80} className="text-3xl" /></div>
-                <div><WordReveal text="Muhammad" delay={0.35} className="text-7xl text-accent text-glow-anim" /></div>
+                <div><WordReveal text="Muhammad" delay={0.35} className="text-6xl text-accent text-glow-anim" /></div>
                 <div><WordReveal text="Aashir" delay={0.55} className="text-5xl"  /></div>
               </h1>
 
