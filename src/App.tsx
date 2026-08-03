@@ -167,7 +167,7 @@ const SEO_PROJECTS = [
     url: "https://www.webcomforts.com",
     domain: "webcomforts.com",
     name: "Webcomforts",
-    desc: "Professional e-commerce web development and UI/UX design solutions.",
+    desc: "",
     img: "images/Webcomforts.png",
     imgFit: "contain",
     icon: Store,
@@ -249,7 +249,16 @@ const WEB_DESIGN_PROJECTS = [
     icon: Dumbbell,
     tags: ["Gym", "Web Design"],
   },
-  
+      {
+    url: "https://zaheer-sports-and-uniforms.vercel.app",
+    domain: "zaheer-sports-and-uniforms.vercel.app",
+    name: "Zaheer Sports & Uniforms",
+    desc: "Professional e-commerce web development and UI/UX design solutions." ,
+    img: "images/Zaheer Sports profile.png",
+    imgFit: "cover",
+    icon: Store,
+    tags: ["Design E-commerce Store", "Development"],
+  },
 ];
 
 const WHATSAPP_IMG = "/images/whatsapp.svg";
@@ -1268,9 +1277,14 @@ export default function App() {
               <div className="w-8 h-8 bg-accent-light rounded-lg flex items-center justify-center">
                 <Code2 className="w-4 h-4 text-accent" />
               </div>
-              <h3 className="font-geist font-semibold text-2xl sm:text-3xl tracking-tight text-text-primary">
-                Web Design & Development <span className="text-accent">Projects</span>
-              </h3>
+              <div className="max-w-2xl">
+                <h3 className="relative font-geist font-semibold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.15] text-text-primary">
+                  Web Design & Development <span className="text-accent">Projects</span>
+                </h3>
+                <p className="relative mt-3 text-sm sm:text-base text-text-secondary leading-relaxed max-w-lg">
+                  Explore live web design builds alongside technical SEO and performance optimization projects.
+                </p>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
