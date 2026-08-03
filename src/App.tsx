@@ -66,6 +66,12 @@ const Store: React.FC<SVGIconProps> = (props) => (
 const Plus: React.FC<SVGIconProps> = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M5 12h14" /><path d="M12 5v14" /></svg>
 );
+const Home: React.FC<SVGIconProps> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><path d="M9 22V12h6v10" /></svg>
+);
+const Dumbbell: React.FC<SVGIconProps> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M14.4 14.4 9.6 9.6" /><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.767a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.829 2.828z" /><path d="m21.5 21.5-1.4-1.4" /><path d="M3.9 3.9 2.5 2.5" /><path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.767-1.767a2 2 0 1 1 2.829-2.829l6.364 6.364a2 2 0 1 1-2.829 2.829l-1.767 1.767a2 2 0 1 1-2.829-2.829z" /></svg>
+);
 const Mail: React.FC<SVGIconProps> = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
 );
@@ -134,87 +140,116 @@ const SKILLS = [
   },
 ];
 
-const PROJECTS = [
+/* SEPARATED PROJECTS DATA */
+const SEO_PROJECTS = [
+
+   {
+    url: "https://www.ninja-vapes.co.uk/",
+    domain: "ninja-vapes.co.uk",
+    name: "Ninja Vapes UK",
+    desc: "UK online vape store design — e-liquids, pod kits, fast browsing layout, and user experience.",
+    img: "https://www.ninja-vapes.co.uk/assets/img/ninja-vapes-logo.webp?v=2",
+    imgFit: "contain",
+    icon: Store,
+    tags: ["E-commerce", "UI Design"],
+  },
+  {
+    url: "https://www.vapesuite.co.uk",
+    domain: "vapesuite.co.uk",
+    name: "Vapesuite",
+    desc: "Boosted organic website traffic and engagement through strategic SEO campaigns.",
+    img: "https://www.webcomforts.com/mtill-uploads/files/vapesuite-web-design-191.webp",
+    imgFit: "cover",
+    icon: Store,
+    tags: ["E-commerce", "SEO Optimization", "United Kingdom"],
+  },
+      {
+    url: "https://www.webcomforts.com",
+    domain: "webcomforts.com",
+    name: "Webcomforts",
+    desc: "Professional e-commerce web development and UI/UX design solutions.",
+    img: "images/Webcomforts.png",
+    imgFit: "contain",
+    icon: Store,
+    tags: ["Web Design", "Development"],
+  },
   {
     url: "https://bedsuite.co.uk/",
     domain: "bedsuite.co.uk",
     name: "bedsuite.co.uk",
-    desc: "Furniture & home furnishings e-commerce, UK — beds, mattresses, sofas, wardrobes, and bedroom furniture.",
+    desc: "Furniture & home furnishings e-commerce, UK — strategic SEO, content strategy, and meta optimization.",
     img: "https://www.webcomforts.com/mtill-uploads/files/e-commerce-web-design-59.webp",
     imgFit: "cover",
     icon: ShoppingBag,
-    tags: ["E-commerce", "SEO"],
+    tags: ["E-commerce", "On-Page SEO"],
   },
   {
     url: "https://www.kdicislamabad.com/",
     domain: "kdicislamabad.com",
     name: "KDIC Islamabad",
-    desc: "UK-standard dental clinic in Islamabad — implants, root canals, orthodontics.",
+    desc: "UK-standard dental clinic in Islamabad — Local SEO strategy, keyword optimization, and search rankings.",
     img: "https://www.webcomforts.com/mtill-uploads/files/dental-web-design-61.webp",
     imgFit: "cover",
     icon: Stethoscope,
     tags: ["Healthcare", "Local SEO"],
   },
   {
+    url: "https://www.naataudio.com",
+    domain: "naataudio.com",
+    name: "NaatAudio",
+    desc: "Optimized an Islamic audio streaming platform, enhancing search engine visibility, SEO keywords, and user reach.",
+    img: "https://www.naataudio.com/img/NaatAudio.png",
+    imgFit: "contain",
+    icon: Store,
+    tags: ["Audio Streaming", "Technical SEO"],
+  },
+
+  {
+    url: "https://www.epoxyres-it.co.uk/",
+    domain: "epoxyres-it.co.uk",
+    name: "Epoxy Res-IT",
+    desc: "Optimized a UK epoxy resin e-commerce store, enhancing search discovery, organic reach, and conversions.",
+    img: "https://www.webcomforts.com/mtill-uploads/files/epoxy-res-it-293.webp",
+    imgFit: "cover",
+    icon: Store,
+    tags: ["E-commerce", "SEO Strategy"],
+  },
+  {
     url: "https://www.hiddenhills.pk/",
     domain: "hiddenhills.pk",
     name: "Hidden Hills",
-    desc: "Luxury hotel & resort in Mansehra, KPK — accommodations, dining, events, online booking.",
+    desc: "Luxury hotel & resort website design in Mansehra, KPK — accommodations, dining, events, and booking flow.",
     img: "https://www.webcomforts.com/mtill-uploads/files/hotel-web-design-60.webp",
     imgFit: "cover",
     icon: Mountain,
     tags: ["Hospitality", "Booking Site"],
   },
+ 
+];
+
+const WEB_DESIGN_PROJECTS = [
+
   {
-    url: "https://www.ninja-vapes.co.uk/",
-    domain: "ninja-vapes.co.uk",
-    name: "Ninja Vapes UK",
-    desc: "UK online vape store — e-liquids, nic salts, pod kits, coils, same-day dispatch.",
-    img: "https://www.ninja-vapes.co.uk/assets/img/ninja-vapes-logo.webp?v=2",
-    imgFit: "contain",
-    icon: Store,
-    tags: ["E-commerce", "UK Market"],
-  },
-  {
-    url: "https://www.vapesuite.co.uk",
-    domain: "vapesuite.co.uk",
-    name: "Vapesuite",
-    desc: "Boosted organic website traffic and engagement through strategic SEO.",
-    img: "https://www.webcomforts.com/mtill-uploads/files/vapesuite-web-design-191.webp",
+    url: "https://aashir-nova-estates.vercel.app/",
+    domain: "aashir-nova-estates.vercel.app",
+    name: "Nova Estates",
+    desc: "Modern real estate showcase site — property listings, agent branding, and a clean browsing experience.",
+    img: "images/nova-estates-profile.png",
     imgFit: "cover",
-    icon: Store,
-    tags: ["E-commerce", "United Kingdom"],
+    icon: Home,
+    tags: ["Real Estate", "Web Design"],
   },
   {
-    url: "https://www.webcomforts.com",
-    domain: "webcomforts.com",
-    name: "Webcomforts",
-    desc: "Professional e-commerce web development solutions.",
-    img: "images/Webcomforts.png",
-    imgFit: "contain",
-    icon: Store,
-    tags: ["Web Design", "Development"],
+    url: "https://aashir-luxefit.vercel.app/",
+    domain: "aashir-luxefit.vercel.app",
+    name: "Luxe Fit",
+    desc: "Bold, energetic gym and fitness brand website with class schedules, membership plans, and visual identity.",
+    img: "images/luxefite-profile.png",
+    imgFit: "cover",
+    icon: Dumbbell,
+    tags: ["Gym", "Web Design"],
   },
-{
-  url: "https://www.naataudio.com",
-  domain: "naataudio.com",
-  name: "NaatAudio",
-  desc: "Developed and optimized an Islamic audio streaming platform, enhancing user experience, SEO, and content accessibility.",
-  img: "https://www.naataudio.com/img/NaatAudio.png",
-  imgFit: "contain",
-  icon: Store,
-  tags: ["Audio Streaming", "Islamic Platform"],
-},
-{
-  url: "https://www.epoxyres-it.co.uk/",
-  domain: "epoxyres-it.co.uk",
-  name: "Epoxy Res-IT",
-  desc: "Designed and optimized a UK epoxy resin e-commerce website, improving user experience, product discovery, and online conversions.",
-  img: "https://www.webcomforts.com/mtill-uploads/files/epoxy-res-it-293.webp",
-  imgFit: "cover",
-  icon: Store,
-  tags: ["E-commerce", "United Kingdom"],
-},
+  
 ];
 
 const WHATSAPP_IMG = "/images/whatsapp.svg";
@@ -490,96 +525,10 @@ const GlobalStyles: React.FC = () => (
       }
     }
 
-    .rail-progress-track {
-      height: 4px;
-      background: #e2e8f0;
-      border-radius: 2px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .rail-progress-fill {
-      height: 100%;
-      background: #6c5ce7;
-      border-radius: 2px;
-      transition: width 0.3s ease;
-      width: 0%;
-    }
-
-    .rail-nav-btn {
-      transition: all 0.3s ease;
-    }
-
-    .rail-nav-btn:hover {
-      transform: scale(1.05);
-    }
-
-    .rail-nav-btn:active {
-      transform: scale(0.95);
-    }
-
-    .rail-track-wrap {
-      position: relative;
-      width: 100%;
-    }
-
-    .rail-fade {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 80px;
-      z-index: 5;
-      pointer-events: none;
-    }
-
-    .rail-fade-left {
-      left: -1px;
-      background: linear-gradient(to right, #ffffff, transparent);
-    }
-
-    .rail-fade-right {
-      right: -1px;
-      background: linear-gradient(to left, #ffffff, transparent);
-    }
-
-    @media (max-width: 768px) {
-      .rail-fade {
-        width: 30px;
-      }
-    }
-
-    #rail-track {
-      display: flex;
-      gap: 28px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      padding: 20px 0;
-      cursor: grab;
-      user-select: none;
-    }
-
-    #rail-track::-webkit-scrollbar {
-      display: none;
-    }
-
-    #rail-track.is-dragging {
-      cursor: grabbing;
-      scroll-snap-type: none;
-    }
-
     .rail-card {
-      flex: 0 0 380px;
-      scroll-snap-align: start;
       position: relative;
       perspective: 1000px;
-    }
-
-    @media (max-width: 640px) {
-      .rail-card {
-        flex: 0 0 300px;
-      }
+      transition: transform 0.3s ease;
     }
 
     .rail-card-index {
@@ -597,11 +546,12 @@ const GlobalStyles: React.FC = () => (
       border: 1px solid #e2e8f0;
       box-shadow: 0 10px 30px -15px rgba(0,0,0,0.05);
       overflow: hidden;
-      transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       height: 100%;
     }
 
     .rail-card:hover .rail-card-inner {
+      transform: translateY(-5px);
       box-shadow: 0 20px 40px -15px rgba(108, 92, 231, 0.12);
     }
 
@@ -680,20 +630,6 @@ const GlobalStyles: React.FC = () => (
 
     .rail-card-body {
       padding: 24px;
-    }
-
-    .rail-browser-dashed {
-      border: 2px dashed #e2e8f0;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .rail-plus {
-      transition: transform 0.3s ease;
-    }
-
-    .rail-card:hover .rail-plus {
-      transform: scale(1.1) rotate(90deg);
     }
 
     .input-focus {
@@ -779,17 +715,6 @@ export default function App() {
   const progressBarRef = useRef<HTMLDivElement>(null);
   const cursorGlowRef = useRef<HTMLDivElement>(null);
 
-  const railTrackRef = useRef<HTMLDivElement>(null);
-  const currentRef = useRef(0);
-  const draggingRef = useRef(false);
-  const draggedRef = useRef(false);
-  const startXRef = useRef(0);
-  const startScrollRef = useRef(0);
-
-  const counterElsRef = useRef<(HTMLSpanElement | null)[]>([]);
-  const progressElsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const totalElsRef = useRef<(HTMLSpanElement | null)[]>([]);
-
   /* ---- scroll progress + nav shadow + active section ---- */
   useEffect(() => {
     const sections = Array.from(document.querySelectorAll("section[id]"));
@@ -844,140 +769,6 @@ export default function App() {
     );
     els.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
-
-  /* ---- work rail carousel logic ---- */
-  useEffect(() => {
-    const track = railTrackRef.current;
-    if (!track) return;
-    const cards = Array.from(track.querySelectorAll(".rail-card")) as HTMLElement[];
-    const total = cards.length;
-
-    totalElsRef.current.forEach((el) => el && (el.textContent = String(total).padStart(2, "0")));
-
-    const cardStep = () => {
-      const style = window.getComputedStyle(track);
-      const gap = parseFloat(style.columnGap || style.gap || "28");
-      return cards[0].getBoundingClientRect().width + gap;
-    };
-
-    const setActive = (index: number) => {
-      currentRef.current = Math.max(0, Math.min(total - 1, index));
-      const n = String(currentRef.current + 1).padStart(2, "0");
-      counterElsRef.current.forEach((el) => el && (el.textContent = n));
-      const pct = ((currentRef.current + 1) / total) * 100;
-      progressElsRef.current.forEach((el) => el && (el.style.width = pct + "%"));
-    };
-
-    const goTo = (index: number) => {
-      const clamped = Math.max(0, Math.min(total - 1, index));
-      track.scrollTo({ left: clamped * cardStep(), behavior: "smooth" });
-      setActive(clamped);
-    };
-
-    let scrollRaf: number | null = null;
-    const onScroll = () => {
-      if (scrollRaf) cancelAnimationFrame(scrollRaf);
-      scrollRaf = requestAnimationFrame(() => {
-        const idx = Math.round(track.scrollLeft / cardStep());
-        setActive(idx);
-      });
-    };
-    track.addEventListener("scroll", onScroll, { passive: true });
-
-    const onMouseDown = (e: MouseEvent) => {
-      draggingRef.current = true;
-      draggedRef.current = false;
-      track.classList.add("is-dragging");
-      startXRef.current = e.pageX;
-      startScrollRef.current = track.scrollLeft;
-    };
-    const onMouseUp = () => {
-      if (!draggingRef.current) return;
-      draggingRef.current = false;
-      track.classList.remove("is-dragging");
-      if (draggedRef.current) {
-        goTo(Math.round(track.scrollLeft / cardStep()));
-      }
-    };
-    const onMouseMove = (e: MouseEvent) => {
-      if (!draggingRef.current) return;
-      const dx = e.pageX - startXRef.current;
-      if (Math.abs(dx) > 4) {
-        draggedRef.current = true;
-      }
-      track.scrollLeft = startScrollRef.current - dx;
-    };
-    const onClickCapture = (e: MouseEvent) => {
-      if (draggedRef.current) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    };
-
-    track.addEventListener("mousedown", onMouseDown);
-    window.addEventListener("mouseup", onMouseUp);
-    window.addEventListener("mousemove", onMouseMove);
-    track.addEventListener("click", onClickCapture, true);
-
-    // subtle magnetic tilt
-    const tiltHandlers: { card: HTMLElement; move: (e: MouseEvent) => void; leave: () => void }[] = [];
-    if (window.matchMedia("(hover: hover)").matches) {
-      cards.forEach((card) => {
-        const element = card as HTMLElement;
-        const inner = element.querySelector(".rail-card-inner") as HTMLElement;
-        if (!inner) return;
-
-        const move = (e: MouseEvent) => {
-          const r = element.getBoundingClientRect();
-          const px = (e.clientX - r.left) / r.width - 0.5;
-          const py = (e.clientY - r.top) / r.height - 0.5;
-          inner.style.transform = `perspective(900px) rotateY(${px * 6}deg) rotateX(${-py * 6}deg) translateY(-6px)`;
-        };
-        const leave = () => {
-          inner.style.transform = "";
-        };
-        element.addEventListener("mousemove", move);
-        element.addEventListener("mouseleave", leave);
-        tiltHandlers.push({ card: element, move, leave });
-      });
-    }
-
-    const onResize = () => goTo(currentRef.current);
-    window.addEventListener("resize", onResize);
-
-    setActive(0);
-
-    return () => {
-      track.removeEventListener("scroll", onScroll);
-      track.removeEventListener("mousedown", onMouseDown);
-      window.removeEventListener("mouseup", onMouseUp);
-      window.removeEventListener("mousemove", onMouseMove);
-      track.removeEventListener("click", onClickCapture, true);
-      window.removeEventListener("resize", onResize);
-      tiltHandlers.forEach(({ card, move, leave }) => {
-        card.removeEventListener("mousemove", move);
-        card.removeEventListener("mouseleave", leave);
-      });
-    };
-  }, []);
-
-  const goPrev = useCallback(() => {
-    const track = railTrackRef.current;
-    if (!track) return;
-    const card = track.querySelector(".rail-card");
-    if (!card) return;
-    const step = card.getBoundingClientRect().width + 28;
-    track.scrollTo({ left: (currentRef.current - 1) * step, behavior: "smooth" });
-  }, []);
-
-  const goNext = useCallback(() => {
-    const track = railTrackRef.current;
-    if (!track) return;
-    const card = track.querySelector(".rail-card");
-    if (!card) return;
-    const step = card.getBoundingClientRect().width + 28;
-    track.scrollTo({ left: (currentRef.current + 1) * step, behavior: "smooth" });
   }, []);
 
   const showToast = (message: string) => {
@@ -1172,7 +963,7 @@ export default function App() {
               >
                 {[
                   ["2+", "Years Exp."],
-                  ["7+", "Projects"],
+                  ["10+", "Projects"],
                   ["100%", "Dedication"],
                 ].map(([num, label]) => (
                   <div key={label}>
@@ -1224,8 +1015,6 @@ export default function App() {
             </div>
           </div>
         </div>
-
-
       </section>
 
       {/* ========== MARQUEE ========== */}
@@ -1233,7 +1022,7 @@ export default function App() {
         <div className="flex marquee-track" style={{ width: "max-content" }}>
           {[0, 1].map((rep) => (
             <div key={rep} className="flex items-center gap-8 px-4">
-              {["WEB DEVELOPMENT", "PROBLEM SOLVING", "CREATIVE DESIGN", "TEAM COLLABORATION", "INNOVATION", "STRATEGIC THINKING", "TECHNOLOGY"].map(
+              {["WEB DEVELOPMENT", "SEO OPTIMIZATION", "PROBLEM SOLVING", "CREATIVE DESIGN", "TEAM COLLABORATION", "STRATEGIC THINKING", "TECHNOLOGY"].map(
                 (word) => (
                   <React.Fragment key={word}>
                     <span className="text-sm text-text-tertiary font-medium tracking-wide">{word}</span>
@@ -1262,7 +1051,7 @@ export default function App() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6">
                   <div className="bg-accent text-white text-xs font-bold tracking-wide uppercase px-5 py-2.5 rounded-lg shadow-md">
-                    SEO Expert
+                    SEO & Web Developer
                   </div>
                 </div>
               </div>
@@ -1285,7 +1074,7 @@ export default function App() {
                 </p>
                 <p className="text-base font-normal text-text-secondary leading-relaxed">
                   With a strong foundation in technology and a creative mindset, I strive to build solutions that
-                  make a real difference. Whether it's developing web applications, solving complex problems, or
+                  make a real difference. Whether it's developing web applications, optimizing search visibility, or
                   collaborating with teams — I bring energy and dedication to everything I do.
                 </p>
               </div>
@@ -1364,113 +1153,98 @@ export default function App() {
         </div>
       </section>
 
-      {/* ========== PROJECTS / WORK RAIL ========== */}
-      <section id="projects" className="rail-section py-24 lg:py-32 border-y border-border-light overflow-hidden relative">
-        <div className="rail-grid-overlay" />
+      {/* ========== PROJECTS SECTION ========== */}
+      <section id="projects" aria-label="Client project portfolio" className="rail-section py-24 lg:py-32 border-y border-border-light overflow-hidden relative">
+        <div className="rail-grid-overlay" aria-hidden="true" />
 
         <div className="max-w-6xl mx-auto px-6 relative">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 relative">
-            <div className="relative">
-              <span className="ghost-heading" aria-hidden="true">WORK</span>
-              <span className="relative font-mono text-[10px] font-bold tracking-widest uppercase text-accent mb-4 block">
-                Selected client builds — live in production
-              </span>
-              <h2 className="relative font-geist font-semibold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.15] text-text-primary">
-                Sites I've shipped,
-                <br />
-                running <span className="text-accent">right now</span>
-              </h2>
-              <p className="relative mt-5 max-w-md text-sm text-text-secondary leading-relaxed">
-                {PROJECTS.length} live builds across e-commerce, healthcare and hospitality — each one designed, developed and
-                optimized end to end. Drag the rail or use the arrows to browse.
-              </p>
-            </div>
-
-            <div className="hidden md:flex items-center gap-5 shrink-0">
-              <div className="rail-progress-track w-40">
-                <div ref={(el) => (progressElsRef.current[0] = el)} className="rail-progress-fill" style={{ width: `${100 / (PROJECTS.length + 1)}%` }} />
-              </div>
-              <div className="font-mono text-sm text-text-secondary whitespace-nowrap">
-                <span ref={(el) => (counterElsRef.current[0] = el)} className="text-text-primary font-semibold">
-                  01
-                </span>
-                <span className="mx-1">/</span>
-                <span ref={(el) => (totalElsRef.current[0] = el)}>{String(PROJECTS.length + 1).padStart(2, "0")}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={goPrev}
-                  aria-label="Previous project"
-                  className="rail-nav-btn w-11 h-11 rounded-full border border-border-light text-text-primary flex items-center justify-center hover-border-accent hover-text-accent"
-                >
-                  <ArrowLeft className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={goNext}
-                  aria-label="Next project"
-                  className="rail-nav-btn w-11 h-11 rounded-full flex items-center justify-center text-white bg-accent hover-bg-accent-dark"
-                >
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
+          {/* MAIN SECTION HEADER */}
+          <div className="mb-16 relative">
+            <span className="ghost-heading" aria-hidden="true">WORK</span>
+            <span className="relative font-mono text-[10px] font-bold tracking-widest uppercase text-accent mb-4 block">
+              Selected client builds — live in production
+            </span>
+            <h2 className="relative font-geist font-semibold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.15] text-text-primary">
+              Featured Work & <span className="text-accent">Case Studies</span>
+            </h2>
+            <p className="relative mt-5 max-w-lg text-sm text-text-secondary leading-relaxed">
+              Explore live builds categorized across SEO strategy & technical optimization and modern web design & development.
+            </p>
           </div>
 
-          <div className="rail-track-wrap">
-            <div className="rail-fade rail-fade-left" />
-            <div className="rail-fade rail-fade-right" />
+          {/* ==================== 1. SEO PROJECTS ==================== */}
+          <div className="mb-20">
+            <div className="flex items-center gap-3 mb-8 border-b border-border-light pb-4">
+              <div className="w-8 h-8 bg-accent-light rounded-lg flex items-center justify-center">
+                <FileSearch className="w-4 h-4 text-accent" />
+              </div>
+              <h3 className="font-geist font-semibold text-2xl sm:text-3xl tracking-tight text-text-primary">
+                SEO <span className="text-accent">Projects</span>
+              </h3>
+            </div>
 
-            <div id="rail-track" ref={railTrackRef}>
-              {PROJECTS.map((p, i) => {
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {SEO_PROJECTS.map((p, i) => {
                 const Icon = p.icon;
                 return (
-                  <article className="rail-card" data-index={i} key={p.name}>
-                    <div className="rail-card-index">Case {String(i + 1).padStart(2, "0")}</div>
+                  <article className="rail-card" key={p.name}>
+                    <div className="rail-card-index">SEO Case {String(i + 1).padStart(2, "0")}</div>
                     <div className="rail-card-inner">
-                      <div className="rail-card-glow" />
-                      <a href={p.url} target="_blank" rel="noopener noreferrer" className="group block select-none">
-                        <div className="rail-browser">
-                          <div className="rail-browser-bar">
-                            <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#FF5F57" }} />
-                            <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#FEBC2E" }} />
-                            <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#28C840" }} />
-                            <div className="ml-3 flex-1 font-mono text-[11px] truncate px-3 py-1 rounded-md bg-white border border-border-light text-text-secondary">
-                              {p.domain}
+                      <div className="rail-card-glow" aria-hidden="true" />
+                      <a
+                        href={p.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={`View ${p.name} — live site`}
+                        className="group block select-none h-full flex flex-col justify-between"
+                      >
+                        <div>
+                          <div className="rail-browser">
+                            <div className="rail-browser-bar" aria-hidden="true">
+                              <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#FF5F57" }} />
+                              <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#FEBC2E" }} />
+                              <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#28C840" }} />
+                              <div className="ml-3 flex-1 font-mono text-[11px] truncate px-3 py-1 rounded-md bg-white border border-border-light text-text-secondary">
+                                {p.domain}
+                              </div>
+                            </div>
+                            <div
+                              className="rail-browser-media"
+                              style={
+                                p.imgFit === "contain"
+                                  ? { display: "flex", items: "center", justifyContent: "center", padding: "2rem", background: "#fff" }
+                                  : {}
+                              }
+                            >
+                              <span className="rail-badge">
+                                <span className="rail-badge-dot" aria-hidden="true" />
+                                Live
+                              </span>
+                              <img
+                                src={p.img}
+                                alt={`${p.name} — ${p.desc}`}
+                                width={640}
+                                height={400}
+                                draggable="false"
+                                className={p.imgFit === "contain" ? "max-h-full max-w-full object-contain" : "object-cover"}
+                                loading="lazy"
+                                decoding="async"
+                                referrerPolicy="no-referrer"
+                              />
                             </div>
                           </div>
-                          <div
-                            className="rail-browser-media"
-                            style={
-                              p.imgFit === "contain"
-                                ? { display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem", background: "#fff" }
-                                : {}
-                            }
-                          >
-                            <span className="rail-badge">
-                              <span className="rail-badge-dot" />
-                              Live
-                            </span>
-                            <img
-                              src={p.img}
-                              alt={p.name}
-                              draggable="false"
-                              className={p.imgFit === "contain" ? "max-h-full max-w-full object-contain" : "object-cover"}
-                              loading="lazy"
-                              referrerPolicy="no-referrer"
-                            />
+                          <div className="rail-card-body flex items-start justify-between gap-4">
+                            <div>
+                              <h4 className="font-geist text-lg font-semibold mb-1.5 flex items-center gap-1.5 text-text-primary">
+                                {p.name}
+                                <ArrowUpRight className="w-4 h-4 text-text-secondary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                              </h4>
+                              <p className="text-sm leading-relaxed text-text-secondary">{p.desc}</p>
+                            </div>
+                            <Icon className="w-4 h-4 mt-1 shrink-0 text-accent" aria-hidden="true" />
                           </div>
                         </div>
-                        <div className="rail-card-body flex items-start justify-between gap-4">
-                          <div>
-                            <h3 className="font-geist text-lg font-semibold mb-1.5 flex items-center gap-1.5 text-text-primary">
-                              {p.name}
-                              <ArrowUpRight className="w-4 h-4 text-text-secondary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                            </h3>
-                            <p className="text-sm leading-relaxed text-text-secondary">{p.desc}</p>
-                          </div>
-                          <Icon className="w-4 h-4 mt-1 shrink-0 text-accent" />
-                        </div>
-                        <div className="flex flex-wrap gap-2 mt-4 px-6">
+                        <div className="flex flex-wrap gap-2 pb-6 px-6">
                           {p.tags.map((tag) => (
                             <span
                               key={tag}
@@ -1485,60 +1259,96 @@ export default function App() {
                   </article>
                 );
               })}
-
-              {/* More on the way card */}
-              <article className="rail-card" data-index={PROJECTS.length}>
-                <div className="rail-card-index">Case {String(PROJECTS.length + 1).padStart(2, "0")}</div>
-                <div className="rail-card-inner flex flex-col">
-                  <div className="rail-browser rail-browser-dashed">
-                    <div
-                      className="rail-browser-media flex flex-col items-center justify-center text-center p-8"
-                      style={{ height: 236, background: "rgba(108, 92, 231, 0.05)" }}
-                    >
-                      <div className="rail-plus w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-5 shadow-sm">
-                        <Plus className="w-5 h-5 text-accent" />
-                      </div>
-                      <h3 className="font-geist text-lg font-semibold mb-1.5 text-text-primary">More on the way</h3>
-                      <p className="text-sm leading-relaxed text-text-secondary">New client projects added regularly.</p>
-                    </div>
-                  </div>
-                  <div className="rail-card-body">
-                    <p className="font-mono text-[11px] uppercase tracking-wider text-text-secondary px-6">
-                      Check back soon
-                    </p>
-                  </div>
-                </div>
-              </article>
             </div>
           </div>
 
-          {/* Mobile nav row */}
-          <div className="flex md:hidden items-center justify-between mt-8">
-            <div className="rail-progress-track flex-1 mr-5">
-              <div ref={(el) => (progressElsRef.current[1] = el)} className="rail-progress-fill" style={{ width: `${100 / (PROJECTS.length + 1)}%` }} />
+          {/* ==================== 2. WEB DESIGN PROJECTS ==================== */}
+          <div>
+            <div className="flex items-center gap-3 mb-8 border-b border-border-light pb-4">
+              <div className="w-8 h-8 bg-accent-light rounded-lg flex items-center justify-center">
+                <Code2 className="w-4 h-4 text-accent" />
+              </div>
+              <h3 className="font-geist font-semibold text-2xl sm:text-3xl tracking-tight text-text-primary">
+                Web Design & Development <span className="text-accent">Projects</span>
+              </h3>
             </div>
-            <div className="font-mono text-sm text-text-secondary whitespace-nowrap mr-4">
-              <span ref={(el) => (counterElsRef.current[1] = el)} className="text-text-primary font-semibold">
-                01
-              </span>
-              <span className="mx-1">/</span>
-              <span ref={(el) => (totalElsRef.current[1] = el)}>{String(PROJECTS.length + 1).padStart(2, "0")}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <button
-                onClick={goPrev}
-                aria-label="Previous project"
-                className="rail-nav-btn w-10 h-10 rounded-full border border-border-light text-text-primary flex items-center justify-center"
-              >
-                <ArrowLeft className="w-4 h-4" />
-              </button>
-              <button
-                onClick={goNext}
-                aria-label="Next project"
-                className="rail-nav-btn w-10 h-10 rounded-full flex items-center justify-center text-white bg-accent"
-              >
-                <ArrowRight className="w-4 h-4" />
-              </button>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {WEB_DESIGN_PROJECTS.map((p, i) => {
+                const Icon = p.icon;
+                return (
+                  <article className="rail-card" key={p.name}>
+                    <div className="rail-card-index">Dev Case {String(i + 1).padStart(2, "0")}</div>
+                    <div className="rail-card-inner">
+                      <div className="rail-card-glow" aria-hidden="true" />
+                      <a
+                        href={p.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={`View ${p.name} — live site`}
+                        className="group block select-none h-full flex flex-col justify-between"
+                      >
+                        <div>
+                          <div className="rail-browser">
+                            <div className="rail-browser-bar" aria-hidden="true">
+                              <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#FF5F57" }} />
+                              <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#FEBC2E" }} />
+                              <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#28C840" }} />
+                              <div className="ml-3 flex-1 font-mono text-[11px] truncate px-3 py-1 rounded-md bg-white border border-border-light text-text-secondary">
+                                {p.domain}
+                              </div>
+                            </div>
+                            <div
+                              className="rail-browser-media"
+                              style={
+                                p.imgFit === "contain"
+                                  ? { display: "flex", items: "center", justifyContent: "center", padding: "2rem", background: "#fff" }
+                                  : {}
+                              }
+                            >
+                              <span className="rail-badge">
+                                <span className="rail-badge-dot" aria-hidden="true" />
+                                Live
+                              </span>
+                              <img
+                                src={p.img}
+                                alt={`${p.name} — ${p.desc}`}
+                                width={640}
+                                height={400}
+                                draggable="false"
+                                className={p.imgFit === "contain" ? "max-h-full max-w-full object-contain" : "object-cover"}
+                                loading="lazy"
+                                decoding="async"
+                                referrerPolicy="no-referrer"
+                              />
+                            </div>
+                          </div>
+                          <div className="rail-card-body flex items-start justify-between gap-4">
+                            <div>
+                              <h4 className="font-geist text-lg font-semibold mb-1.5 flex items-center gap-1.5 text-text-primary">
+                                {p.name}
+                                <ArrowUpRight className="w-4 h-4 text-text-secondary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                              </h4>
+                              <p className="text-sm leading-relaxed text-text-secondary">{p.desc}</p>
+                            </div>
+                            <Icon className="w-4 h-4 mt-1 shrink-0 text-accent" aria-hidden="true" />
+                          </div>
+                        </div>
+                        <div className="flex flex-wrap gap-2 pb-6 px-6">
+                          {p.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="text-[10px] uppercase tracking-wider text-accent bg-accent-light font-semibold px-3 py-1 rounded-full"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </a>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -1651,7 +1461,7 @@ export default function App() {
                   </div>
                 </a>
 
-                {/* WhatsApp (Color Matched with SVG) */}
+                {/* WhatsApp */}
                 <a
                   href="https://wa.me/923203530366"
                   target="_blank"
