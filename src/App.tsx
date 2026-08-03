@@ -167,7 +167,7 @@ const SEO_PROJECTS = [
     url: "https://www.webcomforts.com",
     domain: "webcomforts.com",
     name: "Webcomforts",
-    desc: "",
+    desc: "SEO strategies to improve website rankings, increase organic traffic",
     img: "images/Webcomforts.png",
     imgFit: "contain",
     icon: Store,
