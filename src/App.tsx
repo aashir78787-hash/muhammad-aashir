@@ -84,6 +84,33 @@ const Send: React.FC<SVGIconProps> = (props) => (
 const LinkedIn: React.FC<SVGIconProps> = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
 );
+const QrCode: React.FC<SVGIconProps> = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <rect width="5" height="5" x="3" y="3" rx="1" />
+    <rect width="5" height="5" x="16" y="3" rx="1" />
+    <rect width="5" height="5" x="3" y="16" rx="1" />
+    <path d="M21 16h-3a2 2 0 0 0-2 2v3" />
+    <path d="M21 21v.01" />
+    <path d="M12 7v3a2 2 0 0 1-2 2H7" />
+    <path d="M3 12h.01" />
+    <path d="M12 3h.01" />
+    <path d="M12 16v.01" />
+    <path d="M16 12h1" />
+    <path d="M21 12v.01" />
+    <path d="M12 21v-1" />
+  </svg>
+);
 
 /* ============================================================
    DATA
@@ -143,7 +170,7 @@ const SKILLS = [
 /* SEPARATED PROJECTS DATA */
 const SEO_PROJECTS = [
 
-   {
+  {
     url: "https://www.ninja-vapes.co.uk/",
     domain: "ninja-vapes.co.uk",
     name: "Ninja Vapes UK",
@@ -163,7 +190,7 @@ const SEO_PROJECTS = [
     icon: Store,
     tags: ["E-commerce", "SEO Optimization", "United Kingdom"],
   },
-      {
+  {
     url: "https://www.webcomforts.com",
     domain: "webcomforts.com",
     name: "Webcomforts",
@@ -224,7 +251,7 @@ const SEO_PROJECTS = [
     icon: Mountain,
     tags: ["Hospitality", "Booking Site"],
   },
- 
+
 ];
 
 const WEB_DESIGN_PROJECTS = [
@@ -249,15 +276,25 @@ const WEB_DESIGN_PROJECTS = [
     icon: Dumbbell,
     tags: ["Gym", "Web Design"],
   },
-      {
+  {
     url: "https://zaheer-sports-and-uniforms.vercel.app",
     domain: "zaheer-sports-and-uniforms.vercel.app",
     name: "Zaheer Sports & Uniforms",
-    desc: "Professional e-commerce web development and UI/UX design solutions." ,
+    desc: "Professional e-commerce web development and UI/UX design solutions.",
     img: "images/Zaheer Sports profile.png",
-    imgFit: "cover",
+    imgFit: "scale-down",
     icon: Store,
     tags: ["Design E-commerce Store", "Development"],
+  },
+  {
+    url: "https://aashir-qr-generator.vercel.app/",
+    domain: "aashir-qr-generator.vercel.app",
+    name: "QR Generator",
+    desc: "A fast and customizable QR code generator — create, style, and download QR codes instantly for URLs, text, and more.",
+    img: "images/qr-genrater-profile.png",
+    imgFit: "contain",
+    icon: QrCode,
+    tags: ["Tools", "Web App"],
   },
 ];
 
@@ -871,8 +908,8 @@ export default function App() {
                   href={link.href}
                   onClick={(e) => scrollToHash(e, link.href)}
                   className={`nav-link text-sm font-medium transition-colors ${activeSection === link.href.slice(1)
-                      ? "text-accent font-semibold active"
-                      : "text-text-secondary hover:text-accent"
+                    ? "text-accent font-semibold active"
+                    : "text-text-secondary hover:text-accent"
                     }`}
                 >
                   {link.label}
