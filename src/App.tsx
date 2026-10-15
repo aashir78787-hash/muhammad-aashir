@@ -110,8 +110,6 @@ const QrCode: React.FC<SVGIconProps> = (props) => (
     <path d="M21 12v.01" />
     <path d="M12 21v-1" />
   </svg>
-
-  
 );
 const Coffee: React.FC<SVGIconProps> = (props) => (
   <svg
@@ -131,6 +129,27 @@ const Coffee: React.FC<SVGIconProps> = (props) => (
     <path d="M6 2v2" />
     <path d="M16 8a1 1 0 0 1 1 1v2a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h12z" />
     <path d="M17 11h1a3 3 0 0 1 0 6h-1" />
+  </svg>
+);
+/* NEW: Gamepad icon for the Web Games category */
+const Gamepad2: React.FC<SVGIconProps> = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <line x1="6" x2="10" y1="11" y2="11" />
+    <line x1="8" x2="8" y1="9" y2="13" />
+    <line x1="15" x2="15.01" y1="12" y2="12" />
+    <line x1="18" x2="18.01" y1="10" y2="10" />
+    <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
   </svg>
 );
 
@@ -247,7 +266,7 @@ const SEO_PROJECTS = [
     domain: "naataudio.com",
     name: "NaatAudio",
     desc: "Optimized an Islamic audio streaming platform, enhancing search engine visibility, SEO keywords, and user reach.",
-    img: "https://www.naataudio.com/img/NaatAudio.png",
+    img: "https://www.naataudio.com/assets/img/new-logo/naat_audio_Logo_up.svg",
     imgFit: "contain",
     icon: Store,
     tags: ["Audio Streaming", "Technical SEO"],
@@ -299,15 +318,15 @@ const WEB_DESIGN_PROJECTS = [
     tags: ["Gym", "Web Design"],
   },
   {
-  url: "https://aashir-aura-coffee.vercel.app",
-  domain: "aashir-aura-coffee.vercel.app",
-  name: "Aura Coffee",
-  desc: "Designed and developed a modern, responsive web application and branding experience for a premium coffee shop.",
-  img: "/images/aura-coffee-profile.png",
-  imgFit: "cover",
-  icon: Coffee,
-  tags: ["Web Design", "React", "E-commerce"],
-},
+    url: "https://aashir-aura-coffee.vercel.app",
+    domain: "aashir-aura-coffee.vercel.app",
+    name: "Aura Coffee",
+    desc: "Designed and developed a modern, responsive web application and branding experience for a premium coffee shop.",
+    img: "/images/aura-coffee-profile.png",
+    imgFit: "cover",
+    icon: Coffee,
+    tags: ["Web Design", "React", "E-commerce"],
+  },
   {
     url: "https://zaheer-sports-and-uniforms.vercel.app",
     domain: "zaheer-sports-and-uniforms.vercel.app",
@@ -327,6 +346,20 @@ const WEB_DESIGN_PROJECTS = [
     imgFit: "contain",
     icon: QrCode,
     tags: ["Tools", "Web App"],
+  },
+];
+
+/* NEW: WEB GAMES PROJECTS DATA — add more games here and they appear automatically */
+const WEB_GAMES_PROJECTS = [
+  {
+    url: "https://flappy-bird-by-aashir.vercel.app/",
+    domain: "flappy-bird-by-aashir.vercel.app",
+    name: "Flappy Bird",
+    desc: "A playable browser remake of the classic Flappy Bird — tap or click to flap, dodge the pipes, and beat your high score.",
+    img: "/images/flappy-birds-icon.jfif",
+    imgFit: "cover",
+    icon: Gamepad2,
+    tags: ["Web Game", "JavaScript", "Playable"],
   },
 ];
 
@@ -779,6 +812,91 @@ const WordReveal: React.FC<WordRevealProps> = ({ text, delay = 0, className = ""
 const LinkedInIcon: React.FC<{ className?: string }> = ({ className }) => (
   <LinkedIn className={className} strokeWidth={1.8} />
 );
+
+/* ------------------------------------------------------------
+   Reusable project card (used by SEO, Web Design and Web Games)
+   ------------------------------------------------------------ */
+interface ProjectCardProps {
+  p: any;
+  label: string; // e.g. "SEO Case", "Dev Case", "Game"
+  index: number;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ p, label, index }) => {
+  const Icon = p.icon;
+  return (
+    <article className="rail-card">
+      <div className="rail-card-index">{label} {String(index + 1).padStart(2, "0")}</div>
+      <div className="rail-card-inner">
+        <div className="rail-card-glow" aria-hidden="true" />
+        <a
+          href={p.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={`View ${p.name} — live site`}
+          className="group block select-none h-full flex flex-col justify-between"
+        >
+          <div>
+            <div className="rail-browser">
+              <div className="rail-browser-bar" aria-hidden="true">
+                <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#FF5F57" }} />
+                <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#FEBC2E" }} />
+                <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#28C840" }} />
+                <div className="ml-3 flex-1 font-mono text-[11px] truncate px-3 py-1 rounded-md bg-white border border-border-light text-text-secondary">
+                  {p.domain}
+                </div>
+              </div>
+              <div
+                className="rail-browser-media"
+                style={
+                  p.imgFit === "contain"
+                    ? { display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem", background: "#fff" }
+                    : {}
+                }
+              >
+                <span className="rail-badge">
+                  <span className="rail-badge-dot" aria-hidden="true" />
+                  Live
+                </span>
+                <img
+                  src={p.img}
+                  alt={`${p.name} — ${p.desc}`}
+                  width={640}
+                  height={400}
+                  draggable="false"
+                  className={p.imgFit === "contain" ? "max-h-full max-w-full object-contain" : "object-cover"}
+                  loading="lazy"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </div>
+            <div className="rail-card-body flex items-start justify-between gap-4">
+              <div>
+                <h4 className="font-geist text-lg font-semibold mb-1.5 flex items-center gap-1.5 text-text-primary">
+                  {p.name}
+                  <ArrowUpRight className="w-4 h-4 text-text-secondary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                </h4>
+                <p className="text-sm leading-relaxed text-text-secondary">{p.desc}</p>
+              </div>
+              <Icon className="w-4 h-4 mt-1 shrink-0 text-accent" aria-hidden="true" />
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-2 pb-6 px-6">
+            {p.tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-[10px] uppercase tracking-wider text-accent bg-accent-light font-semibold px-3 py-1 rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </a>
+      </div>
+    </article>
+  );
+};
 
 /* ============================================================
    MAIN COMPONENT
@@ -1246,7 +1364,7 @@ export default function App() {
               Featured Work & <span className="text-accent">Case Studies</span>
             </h2>
             <p className="relative mt-5 max-w-lg text-sm text-text-secondary leading-relaxed">
-              Explore live builds categorized across SEO strategy & technical optimization and modern web design & development.
+              Explore live builds categorized across SEO strategy & technical optimization, modern web design & development, and playable web games.
             </p>
           </div>
 
@@ -1262,86 +1380,14 @@ export default function App() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {SEO_PROJECTS.map((p, i) => {
-                const Icon = p.icon;
-                return (
-                  <article className="rail-card" key={p.name}>
-                    <div className="rail-card-index">SEO Case {String(i + 1).padStart(2, "0")}</div>
-                    <div className="rail-card-inner">
-                      <div className="rail-card-glow" aria-hidden="true" />
-                      <a
-                        href={p.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title={`View ${p.name} — live site`}
-                        className="group block select-none h-full flex flex-col justify-between"
-                      >
-                        <div>
-                          <div className="rail-browser">
-                            <div className="rail-browser-bar" aria-hidden="true">
-                              <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#FF5F57" }} />
-                              <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#FEBC2E" }} />
-                              <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#28C840" }} />
-                              <div className="ml-3 flex-1 font-mono text-[11px] truncate px-3 py-1 rounded-md bg-white border border-border-light text-text-secondary">
-                                {p.domain}
-                              </div>
-                            </div>
-                            <div
-                              className="rail-browser-media"
-                              style={
-                                p.imgFit === "contain"
-                                  ? { display: "flex", items: "center", justifyContent: "center", padding: "2rem", background: "#fff" }
-                                  : {}
-                              }
-                            >
-                              <span className="rail-badge">
-                                <span className="rail-badge-dot" aria-hidden="true" />
-                                Live
-                              </span>
-                              <img
-                                src={p.img}
-                                alt={`${p.name} — ${p.desc}`}
-                                width={640}
-                                height={400}
-                                draggable="false"
-                                className={p.imgFit === "contain" ? "max-h-full max-w-full object-contain" : "object-cover"}
-                                loading="lazy"
-                                decoding="async"
-                                referrerPolicy="no-referrer"
-                              />
-                            </div>
-                          </div>
-                          <div className="rail-card-body flex items-start justify-between gap-4">
-                            <div>
-                              <h4 className="font-geist text-lg font-semibold mb-1.5 flex items-center gap-1.5 text-text-primary">
-                                {p.name}
-                                <ArrowUpRight className="w-4 h-4 text-text-secondary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
-                              </h4>
-                              <p className="text-sm leading-relaxed text-text-secondary">{p.desc}</p>
-                            </div>
-                            <Icon className="w-4 h-4 mt-1 shrink-0 text-accent" aria-hidden="true" />
-                          </div>
-                        </div>
-                        <div className="flex flex-wrap gap-2 pb-6 px-6">
-                          {p.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="text-[10px] uppercase tracking-wider text-accent bg-accent-light font-semibold px-3 py-1 rounded-full"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      </a>
-                    </div>
-                  </article>
-                );
-              })}
+              {SEO_PROJECTS.map((p, i) => (
+                <ProjectCard key={p.name} p={p} label="SEO Case" index={i} />
+              ))}
             </div>
           </div>
 
           {/* ==================== 2. WEB DESIGN PROJECTS ==================== */}
-          <div>
+          <div className="mb-20">
             <div className="flex items-center gap-3 mb-8 border-b border-border-light pb-4">
               <div className="w-8 h-8 bg-accent-light rounded-lg flex items-center justify-center">
                 <Code2 className="w-4 h-4 text-accent" />
@@ -1357,81 +1403,32 @@ export default function App() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {WEB_DESIGN_PROJECTS.map((p, i) => {
-                const Icon = p.icon;
-                return (
-                  <article className="rail-card" key={p.name}>
-                    <div className="rail-card-index">Dev Case {String(i + 1).padStart(2, "0")}</div>
-                    <div className="rail-card-inner">
-                      <div className="rail-card-glow" aria-hidden="true" />
-                      <a
-                        href={p.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title={`View ${p.name} — live site`}
-                        className="group block select-none h-full flex flex-col justify-between"
-                      >
-                        <div>
-                          <div className="rail-browser">
-                            <div className="rail-browser-bar" aria-hidden="true">
-                              <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#FF5F57" }} />
-                              <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#FEBC2E" }} />
-                              <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#28C840" }} />
-                              <div className="ml-3 flex-1 font-mono text-[11px] truncate px-3 py-1 rounded-md bg-white border border-border-light text-text-secondary">
-                                {p.domain}
-                              </div>
-                            </div>
-                            <div
-                              className="rail-browser-media"
-                              style={
-                                p.imgFit === "contain"
-                                  ? { display: "flex", items: "center", justifyContent: "center", padding: "2rem", background: "#fff" }
-                                  : {}
-                              }
-                            >
-                              <span className="rail-badge">
-                                <span className="rail-badge-dot" aria-hidden="true" />
-                                Live
-                              </span>
-                              <img
-                                src={p.img}
-                                alt={`${p.name} — ${p.desc}`}
-                                width={640}
-                                height={400}
-                                draggable="false"
-                                className={p.imgFit === "contain" ? "max-h-full max-w-full object-contain" : "object-cover"}
-                                loading="lazy"
-                                decoding="async"
-                                referrerPolicy="no-referrer"
-                              />
-                            </div>
-                          </div>
-                          <div className="rail-card-body flex items-start justify-between gap-4">
-                            <div>
-                              <h4 className="font-geist text-lg font-semibold mb-1.5 flex items-center gap-1.5 text-text-primary">
-                                {p.name}
-                                <ArrowUpRight className="w-4 h-4 text-text-secondary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
-                              </h4>
-                              <p className="text-sm leading-relaxed text-text-secondary">{p.desc}</p>
-                            </div>
-                            <Icon className="w-4 h-4 mt-1 shrink-0 text-accent" aria-hidden="true" />
-                          </div>
-                        </div>
-                        <div className="flex flex-wrap gap-2 pb-6 px-6">
-                          {p.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="text-[10px] uppercase tracking-wider text-accent bg-accent-light font-semibold px-3 py-1 rounded-full"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      </a>
-                    </div>
-                  </article>
-                );
-              })}
+              {WEB_DESIGN_PROJECTS.map((p, i) => (
+                <ProjectCard key={p.name} p={p} label="Dev Case" index={i} />
+              ))}
+            </div>
+          </div>
+
+          {/* ==================== 3. WEB GAMES (NEW) ==================== */}
+          <div>
+            <div className="flex items-center gap-3 mb-8 border-b border-border-light pb-4">
+              <div className="w-8 h-8 bg-accent-light rounded-lg flex items-center justify-center">
+                <Gamepad2 className="w-4 h-4 text-accent" />
+              </div>
+              <div className="max-w-2xl">
+                <h3 className="relative font-geist font-semibold text-2xl sm:text-3xl tracking-tight text-text-primary">
+                  Web <span className="text-accent">Games</span>
+                </h3>
+                <p className="relative mt-3 text-sm sm:text-base text-text-secondary leading-relaxed max-w-lg">
+                  Browser games I developed from scratch — click a card to play instantly.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {WEB_GAMES_PROJECTS.map((p, i) => (
+                <ProjectCard key={p.name} p={p} label="Game" index={i} />
+              ))}
             </div>
           </div>
         </div>
