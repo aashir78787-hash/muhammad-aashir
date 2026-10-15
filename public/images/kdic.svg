@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <rect width="800" height="500" fill="#f0fdfa"/>
+  <!-- Decorative top bar -->
+  <rect width="800" height="60" fill="#0d9488"/>
+  <text x="40" y="38" font-family="'Inter', sans-serif" font-weight="bold" font-size="24" fill="#ffffff">KDIC Islamabad</text>
+  <!-- Nav items -->
+  <text x="550" y="36" font-family="'Inter', sans-serif" font-size="14" fill="#ffffff" opacity="0.9">Services • Implants • Book Appointment</text>
+  <!-- Hero Section -->
+  <rect x="40" y="100" width="720" height="240" rx="12" fill="#ccfbf1"/>
+  <text x="80" y="180" font-family="'Inter', sans-serif" font-weight="bold" font-size="36" fill="#115e59">UK-Standard Dental Care</text>
+  <text x="80" y="220" font-family="'Inter', sans-serif" font-size="16" fill="#134e4a">State-of-the-art dental implants, orthodontics &amp; smile design</text>
+  <!-- Button -->
+  <rect x="80" y="250" width="160" height="40" rx="20" fill="#0f766e"/>
+  <text x="110" y="274" font-family="'Inter', sans-serif" font-weight="bold" font-size="14" fill="#ffffff">Schedule Call</text>
+  <!-- Grid Preview -->
+  <rect x="40" y="360" width="340" height="100" rx="8" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+  <text x="60" y="415" font-family="'Inter', sans-serif" font-weight="semibold" font-size="16" fill="#115e59">Dental Implants &amp; Restorations</text>
+  <rect x="420" y="360" width="340" height="100" rx="8" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+  <text x="440" y="415" font-family="'Inter', sans-serif" font-weight="semibold" font-size="16" fill="#115e59">Cosmetic Orthodontics</text>
+</svg>
