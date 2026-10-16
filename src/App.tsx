@@ -337,16 +337,6 @@ const WEB_DESIGN_PROJECTS = [
     icon: Store,
     tags: ["Design E-commerce Store", "Development"],
   },
-  {
-    url: "https://aashir-qr-generator.vercel.app/",
-    domain: "aashir-qr-generator.vercel.app",
-    name: "QR Generator",
-    desc: "A fast and customizable QR code generator — create, style, and download QR codes instantly for URLs, text, and more.",
-    img: "images/qr-genrater-profile.png",
-    imgFit: "contain",
-    icon: QrCode,
-    tags: ["Tools", "Web App"],
-  },
 ];
 
 /* NEW: WEB GAMES PROJECTS DATA — add more games here and they appear automatically */
@@ -361,6 +351,28 @@ const WEB_GAMES_PROJECTS = [
     icon: Gamepad2,
     tags: ["Web Game", "JavaScript", "Playable"],
   },
+];
+
+/* NEW: TOOLS I BUILT — add more tools here */
+const TOOLS_PROJECTS = [
+  {
+    url: "https://aashir-qr-generator.vercel.app/",
+    domain: "aashir-qr-generator.vercel.app",
+    name: "QR Generator",
+    desc: "A fast and customizable QR code generator — create, style, and download QR codes instantly for URLs, text, and more.",
+    img: "images/qr-genrater-profile.png",
+    imgFit: "contain",
+    icon: QrCode,
+    tags: ["Tool", "Web App"],
+  },
+];
+
+/* Project categories shown in the Projects section (tabs + groups) */
+const PROJECT_GROUPS = [
+  { key: "seo", tab: "SEO", title: "SEO", accent: "Projects", desc: "Rankings, organic traffic and technical optimization.", icon: FileSearch, label: "SEO", items: SEO_PROJECTS },
+  { key: "web", tab: "Web Design", title: "Web Design &", accent: "Development", desc: "Live websites designed and built from scratch.", icon: Code2, label: "Web", items: WEB_DESIGN_PROJECTS },
+  { key: "games", tab: "Web Games", title: "Web", accent: "Games", desc: "Browser games I developed — click a card to play.", icon: Gamepad2, label: "Game", items: WEB_GAMES_PROJECTS },
+  { key: "tools", tab: "Tools", title: "Tools I", accent: "Built", desc: "Handy web tools and utilities I created.", icon: Settings, label: "Tool", items: TOOLS_PROJECTS },
 ];
 
 const WHATSAPP_IMG = "/images/whatsapp.svg";
@@ -743,6 +755,51 @@ const GlobalStyles: React.FC = () => (
       padding: 24px;
     }
 
+    /* ---- compact project cards ---- */
+    .pj-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pj-tab {
+      font-size: 12px; font-weight: 600; padding: 8px 16px; border-radius: 999px;
+      border: 1px solid #e2e8f0; background: #fff; color: #475569; cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .pj-tab:hover { border-color: rgba(108,92,231,0.4); color: #6c5ce7; }
+    .pj-tab.active { background: #6c5ce7; border-color: #6c5ce7; color: #fff; box-shadow: 0 6px 16px -6px rgba(108,92,231,0.5); }
+    .pj-tab-count { opacity: 0.65; margin-left: 6px; font-weight: 500; }
+
+    .pj-card {
+      display: flex; gap: 14px; align-items: stretch; padding: 12px;
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 14px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      text-decoration: none; color: inherit; height: 100%;
+    }
+    .pj-card:hover {
+      transform: translateY(-3px); border-color: rgba(108,92,231,0.35);
+      box-shadow: 0 14px 30px -14px rgba(108,92,231,0.25);
+    }
+    .pj-thumb {
+      position: relative; flex: 0 0 96px; width: 96px; height: 96px; border-radius: 10px;
+      overflow: hidden; background: #f1f5f9; border: 1px solid #eef2f7;
+    }
+    .pj-thumb img { width: 100%; height: 100%; transition: transform 0.4s ease; }
+    .pj-card:hover .pj-thumb img { transform: scale(1.06); }
+    .pj-body { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+    .pj-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+    .pj-index { font-family: monospace; font-size: 10px; letter-spacing: 0.1em; color: #94a3b8; font-weight: 600; text-transform: uppercase; }
+    .pj-live { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 600; color: #16a34a; }
+    .pj-live i { width: 6px; height: 6px; border-radius: 50%; background: #22c55e; animation: flash 1.5s infinite; }
+    .pj-desc {
+      font-size: 12.5px; line-height: 1.5; color: #64748b; margin: 2px 0 8px;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .pj-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+    .pj-tag {
+      font-size: 9px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700;
+      color: #6c5ce7; background: rgba(108,92,231,0.08); padding: 3px 8px; border-radius: 999px;
+    }
+    @media (max-width: 420px) {
+      .pj-thumb { flex-basis: 76px; width: 76px; height: 76px; }
+    }
+
     .input-focus {
       transition: all 0.3s ease;
       outline: none;
@@ -814,87 +871,56 @@ const LinkedInIcon: React.FC<{ className?: string }> = ({ className }) => (
 );
 
 /* ------------------------------------------------------------
-   Reusable project card (used by SEO, Web Design and Web Games)
+   Compact project card (used by every project category)
    ------------------------------------------------------------ */
 interface ProjectCardProps {
   p: any;
-  label: string; // e.g. "SEO Case", "Dev Case", "Game"
+  label: string;
   index: number;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ p, label, index }) => {
   const Icon = p.icon;
+  const cover = p.imgFit === "cover";
   return (
-    <article className="rail-card">
-      <div className="rail-card-index">{label} {String(index + 1).padStart(2, "0")}</div>
-      <div className="rail-card-inner">
-        <div className="rail-card-glow" aria-hidden="true" />
-        <a
-          href={p.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          title={`View ${p.name} — live site`}
-          className="group block select-none h-full flex flex-col justify-between"
-        >
-          <div>
-            <div className="rail-browser">
-              <div className="rail-browser-bar" aria-hidden="true">
-                <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#FF5F57" }} />
-                <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#FEBC2E" }} />
-                <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#28C840" }} />
-                <div className="ml-3 flex-1 font-mono text-[11px] truncate px-3 py-1 rounded-md bg-white border border-border-light text-text-secondary">
-                  {p.domain}
-                </div>
-              </div>
-              <div
-                className="rail-browser-media"
-                style={
-                  p.imgFit === "contain"
-                    ? { display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem", background: "#fff" }
-                    : {}
-                }
-              >
-                <span className="rail-badge">
-                  <span className="rail-badge-dot" aria-hidden="true" />
-                  Live
-                </span>
-                <img
-                  src={p.img}
-                  alt={`${p.name} — ${p.desc}`}
-                  width={640}
-                  height={400}
-                  draggable="false"
-                  className={p.imgFit === "contain" ? "max-h-full max-w-full object-contain" : "object-cover"}
-                  loading="lazy"
-                  decoding="async"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            </div>
-            <div className="rail-card-body flex items-start justify-between gap-4">
-              <div>
-                <h4 className="font-geist text-lg font-semibold mb-1.5 flex items-center gap-1.5 text-text-primary">
-                  {p.name}
-                  <ArrowUpRight className="w-4 h-4 text-text-secondary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
-                </h4>
-                <p className="text-sm leading-relaxed text-text-secondary">{p.desc}</p>
-              </div>
-              <Icon className="w-4 h-4 mt-1 shrink-0 text-accent" aria-hidden="true" />
-            </div>
-          </div>
-          <div className="flex flex-wrap gap-2 pb-6 px-6">
-            {p.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-[10px] uppercase tracking-wider text-accent bg-accent-light font-semibold px-3 py-1 rounded-full"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </a>
+    <a
+      href={p.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={`View ${p.name} — ${p.domain}`}
+      className="pj-card group select-none"
+    >
+      <div className="pj-thumb" style={cover ? {} : { background: "#fff", padding: "10px" }}>
+        <img
+          src={p.img}
+          alt={`${p.name} — ${p.desc}`}
+          width={192}
+          height={192}
+          draggable="false"
+          style={{ objectFit: cover ? "cover" : "contain" }}
+          loading="lazy"
+          decoding="async"
+          referrerPolicy="no-referrer"
+        />
       </div>
-    </article>
+      <div className="pj-body">
+        <div className="pj-top">
+          <span className="pj-index">{label} {String(index + 1).padStart(2, "0")}</span>
+          <span className="pj-live"><i aria-hidden="true" />Live</span>
+        </div>
+        <h4 className="font-geist text-base font-semibold flex items-center gap-1.5 text-text-primary">
+          <span className="truncate">{p.name}</span>
+          <ArrowUpRight className="w-3.5 h-3.5 shrink-0 text-text-secondary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+          <Icon className="w-3.5 h-3.5 shrink-0 ml-auto text-accent" aria-hidden="true" />
+        </h4>
+        <p className="pj-desc">{p.desc}</p>
+        <div className="pj-tags">
+          {p.tags.map((tag) => (
+            <span key={tag} className="pj-tag">{tag}</span>
+          ))}
+        </div>
+      </div>
+    </a>
   );
 };
 
@@ -907,6 +933,7 @@ export default function App() {
   const [toast, setToast] = useState({ show: false, message: "" });
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [projectTab, setProjectTab] = useState("all");
 
   const progressBarRef = useRef<HTMLDivElement>(null);
   const cursorGlowRef = useRef<HTMLDivElement>(null);
@@ -1350,86 +1377,75 @@ export default function App() {
       </section>
 
       {/* ========== PROJECTS SECTION ========== */}
-      <section id="projects" aria-label="Client project portfolio" className="rail-section py-24 lg:py-32 border-y border-border-light overflow-hidden relative">
+      <section id="projects" aria-label="Client project portfolio" className="rail-section py-20 lg:py-24 border-y border-border-light overflow-hidden relative">
         <div className="rail-grid-overlay" aria-hidden="true" />
 
         <div className="max-w-6xl mx-auto px-6 relative">
-          {/* MAIN SECTION HEADER */}
-          <div className="mb-16 relative">
-            <span className="ghost-heading" aria-hidden="true">WORK</span>
-            <span className="relative font-mono text-[10px] font-bold tracking-widest uppercase text-accent mb-4 block">
-              Selected client builds — live in production
-            </span>
-            <h2 className="relative font-geist font-semibold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.15] text-text-primary">
-              Featured Work & <span className="text-accent">Case Studies</span>
-            </h2>
-            <p className="relative mt-5 max-w-lg text-sm text-text-secondary leading-relaxed">
-              Explore live builds categorized across SEO strategy & technical optimization, modern web design & development, and playable web games.
-            </p>
-          </div>
-
-          {/* ==================== 1. SEO PROJECTS ==================== */}
-          <div className="mb-20">
-            <div className="flex items-center gap-3 mb-8 border-b border-border-light pb-4">
-              <div className="w-8 h-8 bg-accent-light rounded-lg flex items-center justify-center">
-                <FileSearch className="w-4 h-4 text-accent" />
-              </div>
-              <h3 className="font-geist font-semibold text-2xl sm:text-3xl tracking-tight text-text-primary">
-                SEO <span className="text-accent">Projects</span>
-              </h3>
+          {/* HEADER + TABS */}
+          <div className="mb-10 relative flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+            <div className="relative">
+              <span className="ghost-heading" aria-hidden="true">WORK</span>
+              <span className="relative font-mono text-[10px] font-bold tracking-widest uppercase text-accent mb-3 block">
+                Selected builds — live in production
+              </span>
+              <h2 className="relative font-geist font-semibold text-3xl sm:text-4xl tracking-tight leading-[1.15] text-text-primary">
+                Featured Work & <span className="text-accent">Case Studies</span>
+              </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {SEO_PROJECTS.map((p, i) => (
-                <ProjectCard key={p.name} p={p} label="SEO Case" index={i} />
+            <div className="pj-tabs relative" role="tablist" aria-label="Project categories">
+              <button
+                type="button"
+                role="tab"
+                aria-selected={projectTab === "all"}
+                className={`pj-tab ${projectTab === "all" ? "active" : ""}`}
+                onClick={() => setProjectTab("all")}
+              >
+                All
+              </button>
+              {PROJECT_GROUPS.map((g) => (
+                <button
+                  key={g.key}
+                  type="button"
+                  role="tab"
+                  aria-selected={projectTab === g.key}
+                  className={`pj-tab ${projectTab === g.key ? "active" : ""}`}
+                  onClick={() => setProjectTab(g.key)}
+                >
+                  {g.tab}
+                  <span className="pj-tab-count">{g.items.length}</span>
+                </button>
               ))}
             </div>
           </div>
 
-          {/* ==================== 2. WEB DESIGN PROJECTS ==================== */}
-          <div className="mb-20">
-            <div className="flex items-center gap-3 mb-8 border-b border-border-light pb-4">
-              <div className="w-8 h-8 bg-accent-light rounded-lg flex items-center justify-center">
-                <Code2 className="w-4 h-4 text-accent" />
-              </div>
-              <div className="max-w-2xl">
-                <h3 className="relative font-geist font-semibold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.15] text-text-primary">
-                  Web Design & Development <span className="text-accent">Projects</span>
-                </h3>
-                <p className="relative mt-3 text-sm sm:text-base text-text-secondary leading-relaxed max-w-lg">
-                  Explore live web design builds alongside technical SEO and performance optimization projects.
-                </p>
-              </div>
-            </div>
+          {/* GROUPS */}
+          <div className="space-y-12">
+            {PROJECT_GROUPS.filter((g) => projectTab === "all" || projectTab === g.key).map((g) => {
+              const GIcon = g.icon;
+              return (
+                <div key={g.key}>
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-8 h-8 bg-accent-light rounded-lg flex items-center justify-center shrink-0">
+                      <GIcon className="w-4 h-4 text-accent" />
+                    </div>
+                    <div className="min-w-0">
+                      <h3 className="font-geist font-semibold text-xl sm:text-2xl tracking-tight text-text-primary leading-tight">
+                        {g.title} <span className="text-accent">{g.accent}</span>
+                      </h3>
+                      <p className="text-xs sm:text-sm text-text-tertiary mt-0.5">{g.desc}</p>
+                    </div>
+                    <div className="flex-1 h-px bg-border-light ml-2 hidden sm:block" />
+                  </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {WEB_DESIGN_PROJECTS.map((p, i) => (
-                <ProjectCard key={p.name} p={p} label="Dev Case" index={i} />
-              ))}
-            </div>
-          </div>
-
-          {/* ==================== 3. WEB GAMES (NEW) ==================== */}
-          <div>
-            <div className="flex items-center gap-3 mb-8 border-b border-border-light pb-4">
-              <div className="w-8 h-8 bg-accent-light rounded-lg flex items-center justify-center">
-                <Gamepad2 className="w-4 h-4 text-accent" />
-              </div>
-              <div className="max-w-2xl">
-                <h3 className="relative font-geist font-semibold text-2xl sm:text-3xl tracking-tight text-text-primary">
-                  Web <span className="text-accent">Games</span>
-                </h3>
-                <p className="relative mt-3 text-sm sm:text-base text-text-secondary leading-relaxed max-w-lg">
-                  Browser games I developed from scratch — click a card to play instantly.
-                </p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {WEB_GAMES_PROJECTS.map((p, i) => (
-                <ProjectCard key={p.name} p={p} label="Game" index={i} />
-              ))}
-            </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {g.items.map((p, i) => (
+                      <ProjectCard key={p.name} p={p} label={g.label} index={i} />
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
