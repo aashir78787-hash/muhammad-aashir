@@ -1193,7 +1193,7 @@ export default function App() {
 
                 <div className="relative w-72 h-80 sm:w-80 sm:h-[360px] lg:w-[380px] lg:h-[420px] rounded-2xl overflow-hidden profile-shadow bg-white border border-border-light">
                   <img
-                    src="images\new fliped portfolio img img.png"
+                    src="images\flipped Blue coloured profile img.jpg"
                     alt="Muhammad Aashir - Professional Profile Photo"
                     className="w-full h-full object-cover object-top"
                     loading="eager"
@@ -1243,7 +1243,7 @@ export default function App() {
                 className="relative aspect-[4/5] rounded-2xl overflow-hidden card-shadow bg-bg-secondary"
                 style={{ transition: "transform .3s ease-out" }}
               >
-                <img src="images\New Portfolio img.jfif" alt="Muhammad Aashir" className="w-full h-full object-cover object-top" referrerPolicy="no-referrer" />
+                <img src="images\Blue coloured profile img.jfif" alt="Muhammad Aashir" className="w-full h-full object-cover object-top" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6">
                   <div className="bg-accent text-white text-xs font-bold tracking-wide uppercase px-5 py-2.5 rounded-lg shadow-md">
