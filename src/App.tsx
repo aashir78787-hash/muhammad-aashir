@@ -1223,9 +1223,9 @@ export default function App() {
         <div className="max-w-screen-2xl mx-auto px-6">
           <div className="grid grid-cols-12 items-center h-16 sm:h-[4.5rem]">
             <div className="col-span-4 flex items-center gap-3">
-              <div className="w-9 h-9 bg-accent rounded-lg flex items-center justify-center shadow-sm spin-slow overflow-hidden" style={{ animationDuration: "18s" }}>
+              <div className="w-9 h-9 bg-accent rounded-lg flex items-center justify-center shadow-sm overflow-hidden">
                 <img
-                  src="/images/profile logo.png"
+                  src="images\portfolio logo.png"
                   alt="Logo"
                   className="w-full h-full object-cover"
                 />
@@ -1430,7 +1430,7 @@ export default function App() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6">
                   <div className="bg-accent text-white text-xs font-bold tracking-wide uppercase px-5 py-2.5 rounded-lg shadow-md">
-                    Web Strategist & Architect
+                    SEO & Web Developer
                   </div>
                 </div>
               </div>
