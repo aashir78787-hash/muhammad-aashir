@@ -131,7 +131,7 @@ const Coffee: React.FC<SVGIconProps> = (props) => (
     <path d="M17 11h1a3 3 0 0 1 0 6h-1" />
   </svg>
 );
-/* NEW: Gamepad icon for the Web Games category */
+/* Gamepad icon for the Web Games category */
 const Gamepad2: React.FC<SVGIconProps> = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -153,6 +153,50 @@ const Gamepad2: React.FC<SVGIconProps> = (props) => (
   </svg>
 );
 
+/* ---- NEW ICONS FOR THE SKILLS SECTION ---- */
+const FileCode: React.FC<SVGIconProps> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="m10 12.5-2 2.5 2 2.5" /><path d="m14 12.5 2 2.5-2 2.5" /></svg>
+);
+const Braces: React.FC<SVGIconProps> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1" /><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1" /></svg>
+);
+const Database: React.FC<SVGIconProps> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M3 5V19A9 3 0 0 0 21 19V5" /><path d="M3 12A9 3 0 0 0 21 12" /></svg>
+);
+const Terminal: React.FC<SVGIconProps> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><polyline points="4 17 10 11 4 5" /><line x1="12" x2="20" y1="19" y2="19" /></svg>
+);
+const Plug: React.FC<SVGIconProps> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M12 22v-5" /><path d="M9 8V2" /><path d="M15 8V2" /><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z" /></svg>
+);
+const Smartphone: React.FC<SVGIconProps> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><rect width="14" height="20" x="5" y="2" rx="2" ry="2" /><path d="M12 18h.01" /></svg>
+);
+const LayoutDashboard: React.FC<SVGIconProps> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><rect width="7" height="9" x="3" y="3" rx="1" /><rect width="7" height="5" x="14" y="3" rx="1" /><rect width="7" height="9" x="14" y="12" rx="1" /><rect width="7" height="5" x="3" y="16" rx="1" /></svg>
+);
+const Gauge: React.FC<SVGIconProps> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="m12 14 4-4" /><path d="M3.34 19a10 10 0 1 1 17.32 0" /></svg>
+);
+const Search: React.FC<SVGIconProps> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
+);
+const ClipboardCheck: React.FC<SVGIconProps> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><rect width="8" height="4" x="8" y="2" rx="1" ry="1" /><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /><path d="m9 14 2 2 4-4" /></svg>
+);
+const Hash: React.FC<SVGIconProps> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M4 9h16" /><path d="M4 15h16" /><path d="M10 3 8 21" /><path d="M16 3l-2 18" /></svg>
+);
+const Pencil: React.FC<SVGIconProps> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" /><path d="m15 5 4 4" /></svg>
+);
+const Sparkles: React.FC<SVGIconProps> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z" /></svg>
+);
+const TrendingUp: React.FC<SVGIconProps> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" /></svg>
+);
+
 /* ============================================================
    DATA
    ============================================================ */
@@ -163,50 +207,59 @@ const NAV_LINKS = [
   { href: "#contact", label: "Contact" },
 ];
 
-const SKILLS = [
+/* SKILLS — grouped into four disciplines (16 skills total) */
+const SKILL_GROUPS = [
   {
+    key: "dev",
+    title: "Development",
+    tagline: "Clean, fast and maintainable code",
     icon: Code2,
-    title: "Web Development",
-    desc: "Building responsive, fast-loading websites and web applications using modern technologies and clean, maintainable code.",
-    tags: ["HTML", "CSS", "JavaScript"],
+    skills: [
+      { icon: FileCode, title: "HTML5 & CSS3", desc: "Semantic markup and modern styling with Flexbox, Grid and animations." },
+      { icon: Braces, title: "JavaScript & TypeScript", desc: "Interactive, type-safe front-end logic and modern ES features." },
+      { icon: Database, title: "PHP & MySQL", desc: "Dynamic, database-driven websites and server-side applications." },
+      { icon: Terminal, title: "Python", desc: "Scripting, automation and data tasks that save hours of manual work." },
+      { icon: Plug, title: "API Integration", desc: "Connecting third-party services and REST APIs into your website." },
+    ],
   },
   {
-    icon: FileSearch,
-    title: "On-Page SEO",
-    desc: "Optimizing content, meta tags, and site structure to improve keyword relevance and search engine rankings.",
-    tags: ["Keyword Research", "Meta Tags", "Content Optimization"],
-  },
-  {
-    icon: Link2,
-    title: "Off-Page SEO",
-    desc: "Building domain authority through strategic link building, outreach, and brand mentions across the web.",
-    tags: ["Link Building", "Outreach", "Guest Posting"],
-  },
-  {
-    icon: Settings,
-    title: "Technical SEO",
-    desc: "Improving site speed, crawlability, indexing, and structured data to help search engines understand your site.",
-    tags: ["Site Speed", "Schema Markup", "Crawl Audits"],
-  },
-  {
+    key: "design",
+    title: "Design & Performance",
+    tagline: "Beautiful on every screen, quick to load",
     icon: Palette,
-    title: "Graphic Design",
-    desc: "Creating visually compelling graphics, branding assets, and marketing creatives that capture attention.",
-    tags: ["Photoshop", "Illustrator", "Canva"],
+    skills: [
+      { icon: Smartphone, title: "Responsive Web Design", desc: "Layouts that adapt perfectly from mobile to widescreen." },
+      { icon: LayoutDashboard, title: "UI/UX Design", desc: "Intuitive interfaces focused on usability and conversions." },
+      { icon: Gauge, title: "Website Performance Optimization", desc: "Faster load times, better Core Web Vitals and smoother UX." },
+    ],
   },
   {
-    icon: Megaphone,
-    title: "Digital Marketing Management",
-    desc: "Planning and leading digital campaigns across channels, aligning strategy with measurable business goals.",
-    tags: ["Strategy", "Campaign Planning", "Analytics"],
+    key: "seo",
+    title: "Search Engine Optimization",
+    tagline: "Rank higher, get found, grow organic traffic",
+    icon: Search,
+    skills: [
+      { icon: Settings, title: "Technical SEO", desc: "Crawlability, indexing, site speed and structured data." },
+      { icon: FileSearch, title: "On-Page SEO", desc: "Titles, meta tags, headings and content that match search intent." },
+      { icon: ClipboardCheck, title: "SEO Auditing", desc: "In-depth site audits that uncover issues and growth opportunities." },
+      { icon: Hash, title: "Keyword Research", desc: "Finding high-value keywords your customers actually search for." },
+      { icon: ShoppingBag, title: "E-commerce SEO", desc: "Product and category optimization that turns searches into sales." },
+    ],
   },
   {
-    icon: Share2,
-    title: "Social Media Marketing",
-    desc: "Growing brand presence and engagement through content strategy, scheduling, and community management.",
-    tags: ["Content Strategy", "Scheduling", "Engagement"],
+    key: "marketing",
+    title: "Marketing & AI",
+    tagline: "Strategy, content and smart automation",
+    icon: Sparkles,
+    skills: [
+      { icon: TrendingUp, title: "SEO & Digital Marketing", desc: "Campaigns and strategy aligned with measurable business goals." },
+      { icon: Pencil, title: "Content Writing", desc: "Clear, engaging, search-friendly copy for web and brands." },
+      { icon: Sparkles, title: "AI Tools & Prompt Engineering", desc: "Using AI to speed up research, content and development work." },
+    ],
   },
 ];
+
+const TOTAL_SKILLS = SKILL_GROUPS.reduce((n, g) => n + g.skills.length, 0);
 
 /* SEPARATED PROJECTS DATA */
 const SEO_PROJECTS = [
@@ -339,7 +392,7 @@ const WEB_DESIGN_PROJECTS = [
   },
 ];
 
-/* NEW: WEB GAMES PROJECTS DATA — add more games here and they appear automatically */
+/* WEB GAMES PROJECTS DATA — add more games here and they appear automatically */
 const WEB_GAMES_PROJECTS = [
   {
     url: "https://flappy-bird-by-aashir.vercel.app/",
@@ -353,7 +406,7 @@ const WEB_GAMES_PROJECTS = [
   },
 ];
 
-/* NEW: TOOLS I BUILT — add more tools here */
+/* TOOLS I BUILT — add more tools here */
 const TOOLS_PROJECTS = [
   {
     url: "https://aashir-qr-generator.vercel.app/",
@@ -837,6 +890,109 @@ const GlobalStyles: React.FC = () => (
       transform: translateY(0);
       opacity: 1;
     }
+
+    /* ---- compact stylish skills ---- */
+    .sk-panel {
+      position: relative;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 18px;
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    }
+    .sk-panel::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      height: 3px; width: 100%;
+      background: linear-gradient(90deg, #6c5ce7, #a29bfe, transparent);
+      opacity: 0.55;
+      transition: opacity 0.4s ease;
+    }
+    .sk-panel::after {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(108, 92, 231, 0.12), transparent 70%);
+      pointer-events: none;
+    }
+    .sk-panel:hover {
+      transform: translateY(-4px);
+      border-color: rgba(108, 92, 231, 0.35);
+      box-shadow: 0 18px 36px -18px rgba(108, 92, 231, 0.3);
+    }
+    .sk-panel:hover::before { opacity: 1; }
+
+    .sk-panel-head {
+      position: relative;
+      display: flex; align-items: center; gap: 12px;
+      padding-bottom: 12px; margin-bottom: 8px;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    .sk-panel-icon {
+      width: 38px; height: 38px; border-radius: 11px; flex-shrink: 0;
+      background: linear-gradient(135deg, #6c5ce7, #8b7cf0);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 16px -8px rgba(108, 92, 231, 0.6);
+    }
+
+    .sk-row {
+      position: relative;
+      display: flex; align-items: center; gap: 12px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      transition: background 0.25s ease, transform 0.25s ease;
+      cursor: default;
+    }
+    .sk-row:hover {
+      background: rgba(108, 92, 231, 0.07);
+      transform: translateX(4px);
+    }
+    .sk-row-icon {
+      width: 34px; height: 34px; border-radius: 10px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(108, 92, 231, 0.09);
+      color: #6c5ce7;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .sk-row:hover .sk-row-icon {
+      background: #6c5ce7;
+      color: #fff;
+      transform: rotate(-8deg) scale(1.08);
+      box-shadow: 0 8px 14px -6px rgba(108, 92, 231, 0.6);
+    }
+    .sk-row-text { min-width: 0; flex: 1; }
+    .sk-row-title {
+      font-size: 13.5px; font-weight: 600; color: #0f172a; line-height: 1.25;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .sk-row-desc {
+      font-size: 11.5px; color: #64748b; line-height: 1.35; margin-top: 1px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .sk-row-num {
+      font-family: monospace; font-size: 10px; font-weight: 700;
+      color: #cbd5e1; transition: color 0.25s ease;
+    }
+    .sk-row:hover .sk-row-num { color: #6c5ce7; }
+
+    .sk-count {
+      font-family: monospace; font-size: 11px; font-weight: 700;
+      color: #6c5ce7; background: rgba(108, 92, 231, 0.09);
+      padding: 3px 9px; border-radius: 999px; margin-left: auto;
+    }
+    .sk-stat {
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 999px;
+      padding: 6px 14px; font-size: 11.5px; font-weight: 600; color: #475569;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .sk-stat b { color: #6c5ce7; font-size: 13px; }
   `}</style>
 );
 
@@ -1331,47 +1487,70 @@ export default function App() {
       </section>
 
       {/* ========== SKILLS ========== */}
-      <section id="skills" className="py-24 lg:py-32 bg-bg-secondary border-y border-border-light">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <span className="reveal-on-scroll text-[10px] font-bold tracking-widest uppercase text-accent mb-4 block">
+      <section id="skills" className="py-20 lg:py-24 bg-bg-secondary border-y border-border-light relative overflow-hidden">
+        <div className="rail-grid-overlay" aria-hidden="true" />
+        <div
+          className="absolute -top-20 -right-20 w-[420px] h-[420px] rounded-full opacity-[0.07] pointer-events-none float-animation"
+          style={{ background: "#6c5ce7", filter: "blur(110px)" }}
+        />
+
+        <div className="max-w-5xl mx-auto px-6 relative">
+          <div className="text-center mb-10">
+            <span className="reveal-on-scroll text-[10px] font-bold tracking-widest uppercase text-accent mb-3 block">
               Skills & Expertise
             </span>
             <h2
-              className="reveal-on-scroll font-geist font-semibold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.15]"
+              className="reveal-on-scroll font-geist font-semibold text-3xl sm:text-4xl tracking-tight leading-[1.15] mb-5"
               style={{ transitionDelay: "0.1s" }}
             >
-              What I bring to
-              <br />
-              the <span className="text-accent">table</span>
+              What I bring to the <span className="text-accent">table</span>
             </h2>
+            <div className="reveal-on-scroll flex flex-wrap justify-center gap-2" style={{ transitionDelay: "0.2s" }}>
+              <span className="sk-stat"><b>{TOTAL_SKILLS}</b> Core Skills</span>
+              <span className="sk-stat"><b>{SKILL_GROUPS.length}</b> Disciplines</span>
+              <span className="sk-stat"><b>2+</b> Years Experience</span>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SKILLS.map(({ icon: Icon, title, desc, tags }, i) => (
-              <div
-                key={title}
-                className="skill-card reveal-on-scroll bg-white border border-border-light rounded-2xl p-8 card-shadow relative overflow-hidden"
-                style={{ transitionDelay: `${(i % 3) * 0.1}s` }}
-              >
-                <div className="skill-card-glow" />
-                <div className="skill-icon w-12 h-12 bg-accent-light rounded-xl flex items-center justify-center mb-6 transition-colors">
-                  <Icon className="w-5 h-5 text-accent transition-colors" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {SKILL_GROUPS.map((group, gi) => {
+              const GroupIcon = group.icon;
+              const startIndex = SKILL_GROUPS.slice(0, gi).reduce((n, g) => n + g.skills.length, 0);
+              return (
+                <div
+                  key={group.key}
+                  className="sk-panel reveal-on-scroll"
+                  style={{ transitionDelay: `${(gi % 2) * 0.1}s` }}
+                >
+                  <div className="sk-panel-head">
+                    <div className="sk-panel-icon"><GroupIcon className="w-[18px] h-[18px]" /></div>
+                    <div className="min-w-0">
+                      <h3 className="font-geist font-semibold text-base tracking-tight text-text-primary leading-tight">
+                        {group.title}
+                      </h3>
+                      <p className="text-[11.5px] text-text-tertiary mt-0.5 truncate">{group.tagline}</p>
+                    </div>
+                    <span className="sk-count">{String(group.skills.length).padStart(2, "0")}</span>
+                  </div>
+
+                  <div className="relative">
+                    {group.skills.map((s, i) => {
+                      const Icon = s.icon;
+                      return (
+                        <div key={s.title} className="sk-row" title={s.desc}>
+                          <div className="sk-row-icon"><Icon className="w-4 h-4" /></div>
+                          <div className="sk-row-text">
+                            <div className="sk-row-title">{s.title}</div>
+                            <div className="sk-row-desc">{s.desc}</div>
+                          </div>
+                          <span className="sk-row-num" aria-hidden="true">{String(startIndex + i + 1).padStart(2, "0")}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-                <h3 className="font-geist text-lg font-semibold mb-3 text-text-primary">{title}</h3>
-                <p className="text-sm text-text-secondary leading-relaxed mb-5">{desc}</p>
-                <div className="flex flex-wrap gap-2">
-                  {tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-[10px] uppercase tracking-wider text-accent bg-accent-light font-semibold px-3 py-1 rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
