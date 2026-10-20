@@ -1430,7 +1430,7 @@ export default function App() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6">
                   <div className="bg-accent text-white text-xs font-bold tracking-wide uppercase px-5 py-2.5 rounded-lg shadow-md">
-                    SEO & Web Developer
+                    Web Strategist & Architect
                   </div>
                 </div>
               </div>
