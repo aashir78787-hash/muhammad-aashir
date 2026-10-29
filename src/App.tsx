@@ -418,7 +418,7 @@ const TOOLS_PROJECTS = [
     domain: "aashir-qr-generator.vercel.app",
     name: "QR Generator",
     desc: "A fast and customizable QR code generator — create, style, and download QR codes instantly for URLs, text, and more.",
-    img: "images/qr-genrater-profile.png",
+    img: "images/Qr gen icon.png",
     imgFit: "contain",
     icon: QrCode,
     tags: ["Tool", "Web App"],
