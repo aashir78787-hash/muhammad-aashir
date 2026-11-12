@@ -1240,7 +1240,7 @@ export default function App() {
             <div className="col-span-4 flex items-center gap-3">
               <div className="w-9 h-9 bg-accent rounded-lg flex items-center justify-center shadow-sm overflow-hidden">
                 <img
-                  src="images\updated img logo.webp"
+                  src="images\neww logo.png"
                   alt="Logo"
                   className="w-full h-full object-cover"
                 />
